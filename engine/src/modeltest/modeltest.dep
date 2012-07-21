@@ -1,0 +1,17 @@
+# Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von modeltest.mak
+
+..\model\testmain.cpp : \
+	"..\..\..\base\src\TestFramework\CompositeTest.h"\
+	"..\..\..\base\src\TestFramework\easytest.h"\
+	"..\..\..\base\src\TestFramework\LeafTest.h"\
+	"..\..\..\base\src\TestFramework\Test.h"\
+	"..\..\..\base\src\TestFramework\Tester.h"\
+	"..\model\graphparsertest.h"\
+	
+
+!IF  "$(CFG)" == "modeltest - Win32 Release"
+
+!ELSEIF  "$(CFG)" == "modeltest - Win32 Debug"
+
+!ENDIF 
+

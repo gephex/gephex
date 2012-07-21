@@ -1,0 +1,6 @@
+# Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von videowallcontroltype.mak
+
+.\videowallcontroltype.c : \
+	"..\..\..\engine\src\engine\dlltype.h"\
+	".\videowallcontroltype.h"\
+	

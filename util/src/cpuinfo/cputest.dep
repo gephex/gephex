@@ -1,0 +1,5 @@
+# Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von cputest.mak
+
+.\cputest.c : \
+	".\cpuinfo.h"\
+	

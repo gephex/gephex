@@ -1,0 +1,6 @@
+# Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von geotest.mak
+
+.\geotest.c : \
+	"..\..\include\basic_types.h"\
+	".\libgeo.h"\
+	

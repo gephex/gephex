@@ -1,0 +1,119 @@
+# Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von nettest.mak
+
+.\domainsockettest.cpp : \
+	"..\..\..\config.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	"..\utils\buffer.h"\
+	".\block.h"\
+	".\domainclientsocket.h"\
+	".\domainserversocket.h"\
+	".\domainsockettest.h"\
+	".\iclientsocket.h"\
+	".\idatalistener.h"\
+	".\isender.h"\
+	".\iserversocket.h"\
+	".\isocket.h"\
+	".\netexceptions.h"\
+	".\sotimeout.h"\
+	
+
+.\namedpipesockettest.cpp : \
+	"..\..\..\config.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	"..\utils\buffer.h"\
+	".\block.h"\
+	".\iclientsocket.h"\
+	".\idatalistener.h"\
+	".\isender.h"\
+	".\iserversocket.h"\
+	".\isocket.h"\
+	".\namedpipeclientsocket.h"\
+	".\namedpipeserversocket.h"\
+	".\namedpipesockettest.h"\
+	".\netexceptions.h"\
+	".\sotimeout.h"\
+	
+
+.\protocoltest.cpp : \
+	"..\..\..\config.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	"..\utils\buffer.h"\
+	".\block.h"\
+	".\idatalistener.h"\
+	".\isender.h"\
+	".\protocol.h"\
+	".\protocoltest.h"\
+	
+
+.\tagdispatchertest.cpp : \
+	"..\..\..\config.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	"..\utils\buffer.h"\
+	".\block.h"\
+	".\idatalistener.h"\
+	".\itaginterpreter.h"\
+	".\tagdispatcher.cpp"\
+	".\tagdispatcher.h"\
+	".\tagdispatchertest.h"\
+	
+
+.\taggertest.cpp : \
+	"..\..\..\config.h"\
+	"..\..\..\util\include\basic_types.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	"..\utils\buffer.h"\
+	"..\utils\bufferutils.h"\
+	".\block.h"\
+	".\idatalistener.h"\
+	".\isender.h"\
+	".\itagger.h"\
+	".\itaginterpreter.h"\
+	".\tagger.cpp"\
+	".\tagger.h"\
+	".\taggertest.h"\
+	".\tagutils.h"\
+	
+
+.\tcpsockettest.cpp : \
+	"..\..\..\config.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	"..\utils\buffer.h"\
+	".\block.h"\
+	".\iclientsocket.h"\
+	".\idatalistener.h"\
+	".\isender.h"\
+	".\iserversocket.h"\
+	".\isocket.h"\
+	".\netexceptions.h"\
+	".\sotimeout.h"\
+	".\tcpclientsocket.h"\
+	".\tcpserversocket.h"\
+	".\tcpsockettest.h"\
+	
+
+.\testmain.cpp : \
+	"..\..\..\config.h"\
+	"..\TestFramework\CompositeTest.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	"..\TestFramework\Tester.h"\
+	".\domainsockettest.h"\
+	".\namedpipesockettest.h"\
+	".\protocoltest.h"\
+	".\tagdispatchertest.h"\
+	".\taggertest.h"\
+	".\tcpsockettest.h"\
+	
+
+!IF  "$(CFG)" == "nettest - Win32 Release"
+
+!ELSEIF  "$(CFG)" == "nettest - Win32 Debug"
+
+!ENDIF 
+

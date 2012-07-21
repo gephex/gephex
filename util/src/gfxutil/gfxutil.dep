@@ -1,0 +1,15 @@
+# Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von gfxutil.mak
+
+.\gfxutil.cpp : \
+	".\gfxutil.h"\
+	{$(INCLUDE)}"d3d8.h"\
+	{$(INCLUDE)}"d3d8caps.h"\
+	{$(INCLUDE)}"d3d8types.h"\
+	
+
+!IF  "$(CFG)" == "gfxutil - Win32 Release"
+
+!ELSEIF  "$(CFG)" == "gfxutil - Win32 Debug"
+
+!ENDIF 
+

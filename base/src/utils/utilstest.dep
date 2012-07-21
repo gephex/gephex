@@ -1,0 +1,119 @@
+# Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von utilstest.mak
+
+.\autoptrtest.cpp : \
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	".\autoptr.h"\
+	".\autoptrtest.h"\
+	
+
+.\bufferstreamtest.cpp : \
+	"..\..\..\config.h"\
+	"..\TestFramework\easytest.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	".\block.h"\
+	".\buffer.h"\
+	".\bufferstream.h"\
+	".\bufferstreamtest.h"\
+	".\string_.h"\
+	
+
+.\buffertest.cpp : \
+	"..\..\..\config.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	".\block.h"\
+	".\buffer.h"\
+	".\buffertest.h"\
+	
+
+.\circularbuffertest.cpp : \
+	"..\..\..\config.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	".\block.h"\
+	".\buffer.h"\
+	".\circularbuffer.h"\
+	".\circularbuffertest.h"\
+	
+
+.\filesystemtest.cpp : \
+	"..\..\..\config.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	".\filesystem.h"\
+	".\filesystemtest.h"\
+	
+
+.\sharedlibrarytest.cpp : \
+	"..\..\..\config.h"\
+	"..\TestFramework\easytest.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	".\sharedlibrary.h"\
+	".\sharedlibrarytest.h"\
+	
+
+.\streamtokenizertest.cpp : \
+	"..\TestFramework\easytest.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	".\itokenizer.h"\
+	".\streamtokenizer.h"\
+	".\streamtokenizertest.h"\
+	
+
+.\stringtokenizertest.cpp : \
+	"..\TestFramework\easytest.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	".\itokenizer.h"\
+	".\stringtokenizer.h"\
+	".\stringtokenizertest.h"\
+	
+
+.\structreadertest.cpp : \
+	"..\TestFramework\easytest.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	".\structreader.h"\
+	".\structreadertest.h"\
+	
+
+.\structscannertest.cpp : \
+	"..\TestFramework\easytest.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	".\istructtokenlistener.h"\
+	".\structscanner.h"\
+	".\structscannertest.h"\
+	
+
+.\testmain.cpp : \
+	"..\TestFramework\CompositeTest.h"\
+	"..\TestFramework\easytest.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	"..\TestFramework\Tester.h"\
+	".\autoptrtest.h"\
+	".\bufferstreamtest.h"\
+	".\buffertest.h"\
+	".\circularbuffertest.h"\
+	".\filesystemtest.h"\
+	".\sharedlibrarytest.h"\
+	".\streamtokenizertest.h"\
+	".\stringtokenizertest.h"\
+	".\structreadertest.h"\
+	".\structscannertest.h"\
+	".\xmlutilstest.h"\
+	
+
+.\xmlutilstest.cpp : \
+	"..\..\..\config.h"\
+	"..\TestFramework\LeafTest.h"\
+	"..\TestFramework\Test.h"\
+	".\block.h"\
+	".\xmlutils.h"\
+	".\xmlutilstest.h"\
+	
