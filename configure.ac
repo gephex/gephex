@@ -290,7 +290,8 @@ AM_CONDITIONAL(WITH_JOYSTICK, test "x$use_linux_joystick" = "xyes" || test "x$us
 
 # ffmpeg
 CHECK_EXTRA_LIB([FFMPEG],
-                [if test -d $srcdir/contrib/ffmpeg; then have_ffmpeg=yes; else have_ffmpeg=no; fi],
+                [PKG_CHECK_MODULES([FFMPEG], [libavformat libavcodec libavutil libswscale],
+                                   [have_ffmpeg=yes], [have_ffmpeg=no])],
                 [yes], [with_ffmpeg], [have_ffmpeg], [use_ffmpeg])
 AM_CONDITIONAL([WITH_FFMPEG], test "x$use_ffmpeg" = "xyes")
 
@@ -367,46 +368,9 @@ AC_DEFINE_UNQUOTED([FRBINMODULE_CACHE_SIZE], $FRBINCACHE, [Size of the cache the
 fi;
 
 if test "x$use_ffmpeg" = "xyes"; then
- FFMPEG_CONFIGURE_FLAGS="--prefix=$prefix --disable-ffserver --disable-ffplay --enable-shared --enable-memalign-hack" 
-#--disable-risky"
-
- echo Preparing ffmpeg configure call...
- 
- # If building with builddir != srcdir, ffmpegs configure wants to be
- # called with an absolute path.
- # Also, we have to do some workarounds (doc dir is missing for example).
- if test "x${srcdir}" != x.; then
-   pwd
-   (mkdir contrib && mkdir contrib/ffmpeg) || true
-    
-   if ! test -e contrib/ffmpeg/doc
-   then
-      mkdir contrib/ffmpeg/doc
-      echo "all:" > contrib/ffmpeg/doc/Makefile
-   fi
-
-   TMPDIR=`pwd` && cd ${srcdir} && absolute_srcdir=`pwd` && cd $TMPDIR
-
-   FFMPEG_CONFIG_DIR="${absolute_srcdir}/contrib/ffmpeg"
-
-   AC_SUBST(FFMPEG_DIR,"${absolute_srcdir}/contrib/ffmpeg") #TODO
- else
-   FFMPEG_CONFIG_DIR="."
-   AC_SUBST(FFMPEG_DIR,"../../../contrib/ffmpeg") #TODO
- fi
-
- # get absolute path of builddir
- abs_builddir=`pwd`
-
- AC_SUBST(FFMPEG_LDFLAGS,"${abs_builddir}/contrib/ffmpeg/libavformat/libavformat.a ${abs_builddir}/contrib/ffmpeg/libavcodec/libavcodec.a ${abs_builddir}/contrib/ffmpeg/libavutil/libavutil.a -lz")
-
- AC_SUBST(FFMPEG_CFLAGS,"-I${FFMPEG_DIR} -D__STDC_CONSTANT_MACROS")
-
- echo Calling ffmpeg configure with flags:
- echo "${FFMPEG_CONFIG_DIR}/configure $FFMPEG_CONFIGURE_FLAGS"
- cd contrib/ffmpeg/ || exit 1
- ${FFMPEG_CONFIG_DIR}/configure $FFMPEG_CONFIGURE_FLAGS
- cd ../..
+ AC_SUBST(FFMPEG_LDFLAGS,"$FFMPEG_LIBS")
+ FFMPEG_CFLAGS="$FFMPEG_CFLAGS -D__STDC_CONSTANT_MACROS"
+ AC_SUBST(FFMPEG_CFLAGS)
 fi
 
 # set gphx_module_lib_dir and gphx_type_lib_dir

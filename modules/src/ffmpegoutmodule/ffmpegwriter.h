@@ -23,16 +23,14 @@
 
 #include <iostream>
 #include <map>
-
-#if defined _MSC_VER
-#define EMULATE_INTTYPES
-#endif
+#include <string>
 
 extern "C"
 {
 #include "libavformat/avformat.h"
 #include "libavcodec/avcodec.h"
 #include "libavutil/avutil.h"
+#include "libswscale/swscale.h"
 }
 
 class FFMpegWriter
@@ -55,34 +53,27 @@ class FFMpegWriter
   void initStream();
   void cleanup();
 
-  void open_video(AVFormatContext *oc, AVStream *st);
-  AVStream *add_video_stream(AVFormatContext *oc, int codec_id);
-  AVFrame *alloc_picture(int pix_fmt, int width, int height);
-  void close_video(AVFormatContext *oc, AVStream *st);
-  void write_video_frame(AVFormatContext *oc, AVStream *st, AVFrame *picture_ptr);
+  /// Sends frame to the encoder (0 flushes it) and writes all packets
+  void encode(AVFrame *frame);
 
   std::string outfile;
   std::string encstr;
-  int fps;
   int x_res, y_res;
   unsigned int bps;
 
   typedef std::map<std::string, std::pair<int, std::string> > encmap_t;
   encmap_t encmap;
 
-  uint8_t *video_outbuf;
-  int video_outbuf_size;
-  AVFrame *picture, *tmp_picture;
-  int frame_count;
+  AVFrame *picture;
+  AVPacket *packet;
+  SwsContext *sws;
+  int64_t frame_count;
+  bool header_written;
 
-  AVOutputFormat *fmt;
+  const AVOutputFormat *fmt;
   AVFormatContext *oc;
-  AVStream *audio_st, *video_st;
-
-
+  AVCodecContext *enc;
+  AVStream *video_st;
 };
-
-
-
 
 #endif
