@@ -47,6 +47,6 @@ class FFMpegDriver : public VideoFileDriver
 	                int width, int height);
   
  private:
-  std::auto_ptr<FFMpegDriverImpl> m_impl;
+  std::unique_ptr<FFMpegDriverImpl> m_impl;
 };
 #endif
