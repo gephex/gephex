@@ -1,0 +1,21 @@
+# autotools output
+/acinclude.m4
+/aclocal.m4
+/autom4te.cache/
+/config.guess
+/config.h.in
+/config.h.in~
+/config.sub
+/configure
+/compile
+/depcomp
+/install-sh
+/ltmain.sh
+/missing
+Makefile.in
+# out-of-tree build + staged install
+/_build/
+/_install/
+__pycache__/
+/configure~
+/test-driver
