@@ -8,6 +8,9 @@ audiobdmodule_auto.c: audiobdmodule.spec audiobdmodule.h
 audiobdmodule.h: audiobdmodule.spec
 	$(PLUC) h @srcdir@/audiobdmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = audiobdmodule.h
+
 lib_LTLIBRARIES = audiobdmodule.la
 
 audiobdmodule_la_SOURCES = \

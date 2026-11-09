@@ -8,6 +8,9 @@ frbinmodule_auto.c: frbinmodule.spec frbinmodule.h
 frbinmodule.h: frbinmodule.spec
 	$(PLUC) h @srcdir@/frbinmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = frbinmodule.h
+
 EXEEXT=.@SHAREDLIBEXT@
 
 bin_PROGRAMS = frbinmodule

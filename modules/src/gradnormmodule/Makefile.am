@@ -9,6 +9,9 @@ gradnormmodule_auto.c: gradnormmodule.spec gradnormmodule.h
 gradnormmodule.h: gradnormmodule.spec
 	$(PLUC) h @srcdir@/gradnormmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = gradnormmodule.h
+
 EXEEXT=.@SHAREDLIBEXT@
 
 bin_PROGRAMS = gradnormmodule

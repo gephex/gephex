@@ -8,6 +8,9 @@ doepfermodule_auto.c: doepfermodule.spec doepfermodule.h
 doepfermodule.h: doepfermodule.spec
 	$(PLUC) h @srcdir@/doepfermodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = doepfermodule.h
+
 lib_LTLIBRARIES = doepfermodule.la
 
 doepfermodule_la_SOURCES = 	doepfermodule_auto.c \

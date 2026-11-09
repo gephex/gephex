@@ -8,6 +8,9 @@ ffmpegoutmodule_auto.c: ffmpegoutmodule.spec ffmpegoutmodule.h
 ffmpegoutmodule.h: ffmpegoutmodule.spec
 	$(PLUC) h @srcdir@/ffmpegoutmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = ffmpegoutmodule.h
+
 lib_LTLIBRARIES = ffmpegoutmodule.la
 
 ffmpegoutmodule_la_SOURCES = \

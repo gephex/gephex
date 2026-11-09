@@ -5,6 +5,9 @@ cubesmodule_auto.c: cubesmodule.spec cubesmodule.h
 cubesmodule.h: cubesmodule.spec
 	python3 ../../pluc.py h cubesmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = cubesmodule.h
+
 lib_LTLIBRARIES = cubesmodule.la
 cubesmodule_la_SOURCES = cubesmodule_auto.c cubesmodule.cpp cubesmodule.h cubesmodule.spec cubesmodule.xpm cube_table.h basicmath.h
 

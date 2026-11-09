@@ -8,6 +8,9 @@ ifsxfadermodule_auto.c: ifsxfadermodule.spec ifsxfadermodule.h
 ifsxfadermodule.h: ifsxfadermodule.spec
 	$(PLUC) h $(srcdir)/ifsxfadermodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = ifsxfadermodule.h
+
 lib_LTLIBRARIES = ifsxfadermodule.la
 
 ifsxfadermodule_la_SOURCES = ifsxfadermodule_auto.c                           ifsxfadermodule.cpp ifsxfadermodule.h 			  ifsxfadermodule.spec 			  ifsxfadermodule.xpm

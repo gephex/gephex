@@ -8,6 +8,9 @@ blurmodule_auto.c: blurmodule.spec blurmodule.h
 blurmodule.h: blurmodule.spec
 	$(PLUC) h @srcdir@/blurmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = blurmodule.h
+
 lib_LTLIBRARIES = blurmodule.la
 
 blurmodule_la_SOURCES = 	blurmodule_auto.c \

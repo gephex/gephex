@@ -8,6 +8,9 @@ imagebuffermodule_auto.c: imagebuffermodule.spec imagebuffermodule.h
 imagebuffermodule.h: imagebuffermodule.spec
 	$(PLUC) h $(srcdir)/imagebuffermodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = imagebuffermodule.h
+
 lib_LTLIBRARIES = imagebuffermodule.la
 
 imagebuffermodule_la_SOURCES = imagebuffermodule_auto.c                           imagebuffermodule.c imagebuffermodule.h 			  imagebuffermodule.spec 			  imagebuffermodule.xpm

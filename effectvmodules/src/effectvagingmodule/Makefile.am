@@ -8,6 +8,9 @@ effectvagingmodule_auto.c: effectvagingmodule.spec effectvagingmodule.h
 effectvagingmodule.h: effectvagingmodule.spec
 	$(PLUC) h @srcdir@/effectvagingmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvagingmodule.h
+
 lib_LTLIBRARIES = effectvagingmodule.la
 
 effectvagingmodule_la_SOURCES = \

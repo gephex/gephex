@@ -8,6 +8,9 @@ effectvnervousmodule_auto.c: effectvnervousmodule.spec effectvnervousmodule.h
 effectvnervousmodule.h: effectvnervousmodule.spec
 	$(PLUC) h @srcdir@/effectvnervousmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvnervousmodule.h
+
 lib_LTLIBRARIES = effectvnervousmodule.la
 
 effectvnervousmodule_la_SOURCES = \

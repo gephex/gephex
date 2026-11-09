@@ -8,6 +8,9 @@ pixelizemodule_auto.c: pixelizemodule.spec pixelizemodule.h
 pixelizemodule.h: pixelizemodule.spec
 	$(PLUC) h @srcdir@/pixelizemodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = pixelizemodule.h
+
 lib_LTLIBRARIES = pixelizemodule.la
 
 pixelizemodule_la_SOURCES = \

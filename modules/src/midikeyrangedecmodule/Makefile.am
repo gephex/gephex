@@ -8,6 +8,9 @@ midikeyrangedecmodule_auto.c: midikeyrangedecmodule.spec midikeyrangedecmodule.h
 midikeyrangedecmodule.h: midikeyrangedecmodule.spec
 	$(PLUC) h @srcdir@/midikeyrangedecmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = midikeyrangedecmodule.h
+
 lib_LTLIBRARIES = midikeyrangedecmodule.la
 
 midikeyrangedecmodule_la_SOURCES = \

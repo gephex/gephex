@@ -8,6 +8,9 @@ twolayermodule_auto.c: twolayermodule.spec twolayermodule.h
 twolayermodule.h: twolayermodule.spec
 	$(PLUC) h @srcdir@/twolayermodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = twolayermodule.h
+
 lib_LTLIBRARIES = twolayermodule.la
 
 twolayermodule_la_SOURCES = \

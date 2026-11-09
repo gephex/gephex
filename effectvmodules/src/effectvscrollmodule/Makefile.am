@@ -8,6 +8,9 @@ effectvscrollmodule_auto.c: effectvscrollmodule.spec effectvscrollmodule.h
 effectvscrollmodule.h: effectvscrollmodule.spec
 	$(PLUC) h @srcdir@/effectvscrollmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvscrollmodule.h
+
 lib_LTLIBRARIES = effectvscrollmodule.la
 
 effectvscrollmodule_la_SOURCES = \

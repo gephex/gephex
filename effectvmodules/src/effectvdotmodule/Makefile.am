@@ -8,6 +8,9 @@ effectvdotmodule_auto.c: effectvdotmodule.spec effectvdotmodule.h
 effectvdotmodule.h: effectvdotmodule.spec
 	$(PLUC) h $(srcdir)/effectvdotmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvdotmodule.h
+
 lib_LTLIBRARIES = effectvdotmodule.la
 
 effectvdotmodule_la_SOURCES = \

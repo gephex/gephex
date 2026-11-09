@@ -8,6 +8,9 @@ effectvblurzoommodule_auto.c: effectvblurzoommodule.spec effectvblurzoommodule.h
 effectvblurzoommodule.h: effectvblurzoommodule.spec
 	$(PLUC) h @srcdir@/effectvblurzoommodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvblurzoommodule.h
+
 lib_LTLIBRARIES = effectvblurzoommodule.la
 
 effectvblurzoommodule_la_SOURCES = \

@@ -8,6 +8,9 @@ midipitchwdecmodule_auto.c: midipitchwdecmodule.spec midipitchwdecmodule.h
 midipitchwdecmodule.h: midipitchwdecmodule.spec
 	$(PLUC) h @srcdir@/midipitchwdecmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = midipitchwdecmodule.h
+
 lib_LTLIBRARIES = midipitchwdecmodule.la
 
 midipitchwdecmodule_la_SOURCES = \

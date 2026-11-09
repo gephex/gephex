@@ -8,6 +8,9 @@ diffmodule_auto.c: diffmodule.spec diffmodule.h
 diffmodule.h: diffmodule.spec
 	$(PLUC) h $(srcdir)/diffmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = diffmodule.h
+
 lib_LTLIBRARIES = diffmodule.la
 
 diffmodule_la_SOURCES = \

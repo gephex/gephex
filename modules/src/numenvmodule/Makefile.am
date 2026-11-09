@@ -8,6 +8,9 @@ numenvmodule_auto.c: numenvmodule.spec numenvmodule.h
 numenvmodule.h: numenvmodule.spec
 	$(PLUC) h @srcdir@/numenvmodule.spec 
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = numenvmodule.h
+
 lib_LTLIBRARIES = numenvmodule.la
 
 numenvmodule_la_SOURCES = 	numenvmodule_auto.c \

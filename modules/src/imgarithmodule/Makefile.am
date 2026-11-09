@@ -8,6 +8,9 @@ imgarithmodule_auto.c: imgarithmodule.spec imgarithmodule.h
 imgarithmodule.h: imgarithmodule.spec
 	$(PLUC) h @srcdir@/imgarithmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = imgarithmodule.h
+
 EXEEXT=.@SHAREDLIBEXT@
 
 bin_PROGRAMS = imgarithmodule

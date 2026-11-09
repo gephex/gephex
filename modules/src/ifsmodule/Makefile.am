@@ -8,6 +8,9 @@ ifsmodule_auto.c: ifsmodule.spec ifsmodule.h
 ifsmodule.h: ifsmodule.spec
 	$(PLUC) h $(srcdir)/ifsmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = ifsmodule.h
+
 lib_LTLIBRARIES = ifsmodule.la
 
 ifsmodule_la_SOURCES =	ifsmodule_auto.c \

@@ -8,6 +8,9 @@ capturemodule_auto.c: capturemodule.spec capturemodule.h
 capturemodule.h: capturemodule.spec
 	$(PLUC) h @srcdir@/capturemodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = capturemodule.h
+
 lib_LTLIBRARIES = capturemodule.la
 
 capturemodule_la_SOURCES = \

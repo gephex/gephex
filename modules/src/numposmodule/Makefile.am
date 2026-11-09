@@ -8,6 +8,9 @@ numposmodule_auto.c: numposmodule.spec numposmodule.h
 numposmodule.h: numposmodule.spec
 	$(PLUC) h @srcdir@/numposmodule.spec 
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = numposmodule.h
+
 lib_LTLIBRARIES = numposmodule.la
 
 numposmodule_la_SOURCES = 	numposmodule_auto.c \

@@ -8,6 +8,9 @@ overlaymodule_auto.c: overlaymodule.spec overlaymodule.h
 overlaymodule.h: overlaymodule.spec
 	$(PLUC) h @srcdir@/overlaymodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = overlaymodule.h
+
 lib_LTLIBRARIES = overlaymodule.la
 
 overlaymodule_la_SOURCES = \

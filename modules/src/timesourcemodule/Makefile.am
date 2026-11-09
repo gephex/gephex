@@ -8,6 +8,9 @@ timesourcemodule_auto.c: timesourcemodule.spec timesourcemodule.h
 timesourcemodule.h: timesourcemodule.spec
 	$(PLUC) h @srcdir@/timesourcemodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = timesourcemodule.h
+
 lib_LTLIBRARIES = timesourcemodule.la
 
 timesourcemodule_la_SOURCES = \

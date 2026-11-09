@@ -8,6 +8,9 @@ effectvshagadelicmodule_auto.c: effectvshagadelicmodule.spec effectvshagadelicmo
 effectvshagadelicmodule.h: effectvshagadelicmodule.spec
 	$(PLUC) h @srcdir@/effectvshagadelicmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvshagadelicmodule.h
+
 lib_LTLIBRARIES = effectvshagadelicmodule.la
 
 effectvshagadelicmodule_la_SOURCES = \

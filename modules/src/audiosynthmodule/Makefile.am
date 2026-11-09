@@ -8,6 +8,9 @@ audiosynthmodule_auto.c: audiosynthmodule.spec audiosynthmodule.h
 audiosynthmodule.h: audiosynthmodule.spec
 	$(PLUC) h @srcdir@/audiosynthmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = audiosynthmodule.h
+
 lib_LTLIBRARIES = audiosynthmodule.la
 
 audiosynthmodule_la_SOURCES = \

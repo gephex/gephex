@@ -8,6 +8,9 @@ audioinmodule_auto.c: audioinmodule.spec audioinmodule.h
 audioinmodule.h: audioinmodule.spec
 	$(PLUC) h @srcdir@/audioinmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = audioinmodule.h
+
 lib_LTLIBRARIES = audioinmodule.la
 
 if WITH_ASOUNDLIB

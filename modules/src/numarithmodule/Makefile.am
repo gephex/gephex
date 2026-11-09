@@ -8,6 +8,9 @@ numarithmodule_auto.c: numarithmodule.spec numarithmodule.h
 numarithmodule.h: numarithmodule.spec
 	$(PLUC) h @srcdir@/numarithmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = numarithmodule.h
+
 lib_LTLIBRARIES = numarithmodule.la
 
 numarithmodule_la_SOURCES = \

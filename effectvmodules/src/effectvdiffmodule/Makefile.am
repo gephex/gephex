@@ -8,6 +8,9 @@ effectvdiffmodule_auto.c: effectvdiffmodule.spec effectvdiffmodule.h
 effectvdiffmodule.h: effectvdiffmodule.spec
 	$(PLUC) h @srcdir@/effectvdiffmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvdiffmodule.h
+
 lib_LTLIBRARIES = effectvdiffmodule.la
 
 effectvdiffmodule_la_SOURCES = \

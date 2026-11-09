@@ -8,6 +8,9 @@ effectvmatrixmodule_auto.c: effectvmatrixmodule.spec effectvmatrixmodule.h
 effectvmatrixmodule.h: effectvmatrixmodule.spec
 	$(PLUC) h @srcdir@/effectvmatrixmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvmatrixmodule.h
+
 lib_LTLIBRARIES = effectvmatrixmodule.la
 
 effectvmatrixmodule_la_SOURCES = \

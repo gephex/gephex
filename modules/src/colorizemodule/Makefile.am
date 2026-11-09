@@ -8,6 +8,9 @@ colorizemodule_auto.c: colorizemodule.spec colorizemodule.h
 colorizemodule.h: colorizemodule.spec
 	$(PLUC) h @srcdir@/colorizemodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = colorizemodule.h
+
 lib_LTLIBRARIES = colorizemodule.la
 
 colorizemodule_la_SOURCES = \

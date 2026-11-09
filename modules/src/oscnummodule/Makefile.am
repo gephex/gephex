@@ -8,6 +8,9 @@ oscnummodule_auto.c: oscnummodule.spec oscnummodule.h
 oscnummodule.h: oscnummodule.spec
 	$(PLUC) h @srcdir@/oscnummodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = oscnummodule.h
+
 lib_LTLIBRARIES = oscnummodule.la
 
 oscnummodule_la_SOURCES = \

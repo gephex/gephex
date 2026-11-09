@@ -8,6 +8,9 @@ tunnelmodule_auto.c: tunnelmodule.spec tunnelmodule.h
 tunnelmodule.h: tunnelmodule.spec
 	$(PLUC) h @srcdir@/tunnelmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = tunnelmodule.h
+
 EXEEXT=.@SHAREDLIBEXT@
 
 bin_PROGRAMS = tunnelmodule

@@ -8,6 +8,9 @@ audiooutmodule_auto.c: audiooutmodule.spec audiooutmodule.h
 audiooutmodule.h: audiooutmodule.spec
 	$(PLUC) h @srcdir@/audiooutmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = audiooutmodule.h
+
 lib_LTLIBRARIES = audiooutmodule.la
 
 

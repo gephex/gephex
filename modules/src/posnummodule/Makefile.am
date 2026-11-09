@@ -8,6 +8,9 @@ posnummodule_auto.c: posnummodule.spec posnummodule.h
 posnummodule.h: posnummodule.spec
 	$(PLUC) h @srcdir@/posnummodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = posnummodule.h
+
 lib_LTLIBRARIES = posnummodule.la
 
 posnummodule_la_SOURCES = 	posnummodule_auto.c \

@@ -8,6 +8,9 @@ staticcolormodule_auto.c: staticcolormodule.spec staticcolormodule.h
 staticcolormodule.h: staticcolormodule.spec
 	$(PLUC) h @srcdir@/staticcolormodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = staticcolormodule.h
+
 EXEEXT=.@SHAREDLIBEXT@
 
 bin_PROGRAMS = staticcolormodule

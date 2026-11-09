@@ -8,6 +8,9 @@ midiinmodule_auto.c: midiinmodule.spec midiinmodule.h
 midiinmodule.h: midiinmodule.spec
 	$(PLUC) h @srcdir@/midiinmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = midiinmodule.h
+
 lib_LTLIBRARIES = midiinmodule.la
 
 if WITH_ASOUNDLIB

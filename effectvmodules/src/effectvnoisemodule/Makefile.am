@@ -8,6 +8,9 @@ effectvnoisemodule_auto.c: effectvnoisemodule.spec effectvnoisemodule.h
 effectvnoisemodule.h: effectvnoisemodule.spec
 	$(PLUC) h @srcdir@/effectvnoisemodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvnoisemodule.h
+
 lib_LTLIBRARIES = effectvnoisemodule.la
 
 effectvnoisemodule_la_SOURCES = \

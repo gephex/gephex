@@ -8,6 +8,9 @@ effectvquarkmodule_auto.c: effectvquarkmodule.spec effectvquarkmodule.h
 effectvquarkmodule.h: effectvquarkmodule.spec
 	$(PLUC) h @srcdir@/effectvquarkmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvquarkmodule.h
+
 lib_LTLIBRARIES = effectvquarkmodule.la
 
 effectvquarkmodule_la_SOURCES = \

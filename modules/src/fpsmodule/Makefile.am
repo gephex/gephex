@@ -8,6 +8,9 @@ fpsmodule_auto.c: fpsmodule.spec fpsmodule.h
 fpsmodule.h: fpsmodule.spec
 	$(PLUC) h @srcdir@/fpsmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = fpsmodule.h
+
 lib_LTLIBRARIES = fpsmodule.la
 
 fpsmodule_la_SOURCES = 	fpsmodule_auto.c \

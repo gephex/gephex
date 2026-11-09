@@ -8,6 +8,9 @@ rotozoommodule_auto.c: rotozoommodule.spec rotozoommodule.h
 rotozoommodule.h: rotozoommodule.spec
 	$(PLUC) h @srcdir@/rotozoommodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = rotozoommodule.h
+
 lib_LTLIBRARIES = rotozoommodule.la
 
 rotozoommodule_la_SOURCES = rotozoommodule_auto.c \

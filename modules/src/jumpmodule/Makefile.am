@@ -8,6 +8,9 @@ jumpmodule_auto.c: jumpmodule.spec jumpmodule.h
 jumpmodule.h: jumpmodule.spec
 	$(PLUC) h @srcdir@/jumpmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = jumpmodule.h
+
 lib_LTLIBRARIES = jumpmodule.la
 
 jumpmodule_la_SOURCES = 	jumpmodule_auto.c \

@@ -8,6 +8,9 @@ effectvbaltanmodule_auto.c: effectvbaltanmodule.spec effectvbaltanmodule.h
 effectvbaltanmodule.h: effectvbaltanmodule.spec
 	$(PLUC) h @srcdir@/effectvbaltanmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvbaltanmodule.h
+
 lib_LTLIBRARIES = effectvbaltanmodule.la
 
 effectvbaltanmodule_la_SOURCES = \

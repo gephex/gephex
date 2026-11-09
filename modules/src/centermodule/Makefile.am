@@ -8,6 +8,9 @@ centermodule_auto.c: centermodule.spec centermodule.h
 centermodule.h: centermodule.spec
 	$(PLUC) h @srcdir@/centermodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = centermodule.h
+
 lib_LTLIBRARIES = centermodule.la
 
 centermodule_la_SOURCES = \

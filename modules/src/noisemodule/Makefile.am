@@ -8,6 +8,9 @@ noisemodule_auto.c: noisemodule.spec noisemodule.h
 noisemodule.h: noisemodule.spec
 	$(PLUC) h @srcdir@/noisemodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = noisemodule.h
+
 lib_LTLIBRARIES = noisemodule.la
 
 noisemodule_la_SOURCES = \

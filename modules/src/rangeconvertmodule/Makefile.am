@@ -8,6 +8,9 @@ rangeconvertmodule_auto.c: rangeconvertmodule.spec rangeconvertmodule.h
 rangeconvertmodule.h: rangeconvertmodule.spec
 	$(PLUC) h $(srcdir)/rangeconvertmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = rangeconvertmodule.h
+
 lib_LTLIBRARIES = rangeconvertmodule.la
 
 rangeconvertmodule_la_SOURCES = \

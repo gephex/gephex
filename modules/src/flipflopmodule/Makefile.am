@@ -8,6 +8,9 @@ flipflopmodule_auto.c: flipflopmodule.spec flipflopmodule.h
 flipflopmodule.h: flipflopmodule.spec
 	$(PLUC) h $(srcdir)/flipflopmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = flipflopmodule.h
+
 lib_LTLIBRARIES = flipflopmodule.la
 
 flipflopmodule_la_SOURCES = flipflopmodule_auto.c                           flipflopmodule.c flipflopmodule.h 			  flipflopmodule.spec 			  flipflopmodule.xpm

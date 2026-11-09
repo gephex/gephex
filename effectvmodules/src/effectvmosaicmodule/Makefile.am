@@ -8,6 +8,9 @@ effectvmosaicmodule_auto.c: effectvmosaicmodule.spec effectvmosaicmodule.h
 effectvmosaicmodule.h: effectvmosaicmodule.spec
 	$(PLUC) h @srcdir@/effectvmosaicmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvmosaicmodule.h
+
 lib_LTLIBRARIES = effectvmosaicmodule.la
 
 effectvmosaicmodule_la_SOURCES = \

@@ -8,6 +8,9 @@ effectvpuzzlemodule_auto.c: effectvpuzzlemodule.spec effectvpuzzlemodule.h
 effectvpuzzlemodule.h: effectvpuzzlemodule.spec
 	$(PLUC) h $(srcdir)/effectvpuzzlemodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvpuzzlemodule.h
+
 lib_LTLIBRARIES = effectvpuzzlemodule.la
 
 effectvpuzzlemodule_la_SOURCES = \

@@ -8,6 +8,9 @@ resultmodule_auto.c: resultmodule.spec resultmodule.h
 resultmodule.h: resultmodule.spec
 	$(PLUC) h @srcdir@/resultmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = resultmodule.h
+
 lib_LTLIBRARIES = resultmodule.la
 resultmodule_la_SOURCES = 	resultmodule_auto.c \
 				resultmodule.c \

@@ -8,6 +8,9 @@ effectvdizzymodule_auto.c: effectvdizzymodule.spec effectvdizzymodule.h
 effectvdizzymodule.h: effectvdizzymodule.spec
 	$(PLUC) h @srcdir@/effectvdizzymodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvdizzymodule.h
+
 lib_LTLIBRARIES = effectvdizzymodule.la
 
 effectvdizzymodule_la_SOURCES = \

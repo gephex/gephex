@@ -8,6 +8,9 @@ oscinmodule_auto.c: oscinmodule.spec oscinmodule.h
 oscinmodule.h: oscinmodule.spec
 	$(PLUC) h @srcdir@/oscinmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = oscinmodule.h
+
 lib_LTLIBRARIES = oscinmodule.la
 
 oscinmodule_la_SOURCES = \

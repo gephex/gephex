@@ -8,6 +8,9 @@ plasmamodule_auto.c: plasmamodule.spec plasmamodule.h
 plasmamodule.h: plasmamodule.spec
 	$(PLUC) h @srcdir@/plasmamodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = plasmamodule.h
+
 lib_LTLIBRARIES = plasmamodule.la
 
 plasmamodule_la_SOURCES = 	plasmamodule_auto.c \

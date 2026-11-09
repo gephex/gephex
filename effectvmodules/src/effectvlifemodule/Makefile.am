@@ -8,6 +8,9 @@ effectvlifemodule_auto.c: effectvlifemodule.spec effectvlifemodule.h
 effectvlifemodule.h: effectvlifemodule.spec
 	$(PLUC) h @srcdir@/effectvlifemodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvlifemodule.h
+
 lib_LTLIBRARIES = effectvlifemodule.la
 
 effectvlifemodule_la_SOURCES = \

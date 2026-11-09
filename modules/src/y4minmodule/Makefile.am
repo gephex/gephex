@@ -8,6 +8,9 @@ y4minmodule_auto.c: y4minmodule.spec y4minmodule.h
 y4minmodule.h: y4minmodule.spec
 	$(PLUC) h @srcdir@/y4minmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = y4minmodule.h
+
 lib_LTLIBRARIES = y4minmodule.la
 
 y4minmodule_la_SOURCES = \

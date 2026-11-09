@@ -8,6 +8,9 @@ dplmodule_auto.c: dplmodule.spec dplmodule.h
 dplmodule.h: dplmodule.spec
 	$(PLUC) h @srcdir@/dplmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = dplmodule.h
+
 lib_LTLIBRARIES = dplmodule.la
 
 dplmodule_la_SOURCES = \

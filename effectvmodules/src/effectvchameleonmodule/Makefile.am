@@ -8,6 +8,9 @@ effectvchameleonmodule_auto.c: effectvchameleonmodule.spec effectvchameleonmodul
 effectvchameleonmodule.h: effectvchameleonmodule.spec
 	$(PLUC) h @srcdir@/effectvchameleonmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvchameleonmodule.h
+
 lib_LTLIBRARIES = effectvchameleonmodule.la
 
 effectvchameleonmodule_la_SOURCES = \

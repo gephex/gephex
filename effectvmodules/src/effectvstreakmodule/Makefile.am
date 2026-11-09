@@ -8,6 +8,9 @@ effectvstreakmodule_auto.c: effectvstreakmodule.spec effectvstreakmodule.h
 effectvstreakmodule.h: effectvstreakmodule.spec
 	$(PLUC) h @srcdir@/effectvstreakmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvstreakmodule.h
+
 lib_LTLIBRARIES = effectvstreakmodule.la
 
 effectvstreakmodule_la_SOURCES = \

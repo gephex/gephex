@@ -8,6 +8,9 @@ effectvpredatormodule_auto.c: effectvpredatormodule.spec effectvpredatormodule.h
 effectvpredatormodule.h: effectvpredatormodule.spec
 	$(PLUC) h @srcdir@/effectvpredatormodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvpredatormodule.h
+
 lib_LTLIBRARIES = effectvpredatormodule.la
 
 effectvpredatormodule_la_SOURCES = \

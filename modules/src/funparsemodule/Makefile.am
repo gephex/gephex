@@ -8,6 +8,9 @@ funparsemodule_auto.c: funparsemodule.spec funparsemodule.h
 funparsemodule.h: funparsemodule.spec
 	$(PLUC) h @srcdir@/funparsemodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = funparsemodule.h
+
 lib_LTLIBRARIES = funparsemodule.la
 
 funparsemodule_la_SOURCES = \

@@ -8,6 +8,9 @@ sdlfontmodule_auto.c: sdlfontmodule.spec sdlfontmodule.h
 sdlfontmodule.h: sdlfontmodule.spec
 	$(PLUC) h @srcdir@/sdlfontmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = sdlfontmodule.h
+
 lib_LTLIBRARIES = sdlfontmodule.la
 
 SDL_TTF_lDFLAGS =  @SDL_LD_FLAGS@ @SDL_TTF_LDFLAGS@

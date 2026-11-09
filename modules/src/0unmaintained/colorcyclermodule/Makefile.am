@@ -5,6 +5,9 @@ colorcyclermodule_auto.c: colorcyclermodule.spec colorcyclermodule.h
 colorcyclermodule.h: colorcyclermodule.spec
 	python3 ../../pluc.py h colorcyclermodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = colorcyclermodule.h
+
 lib_LTLIBRARIES = colorcyclermodule.la
 colorcyclermodule_la_SOURCES = colorcyclermodule_auto.c colorcyclermodule.c colorcyclermodule.h colorcyclermodule.spec colorcyclermodule.xpm
 

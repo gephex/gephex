@@ -8,6 +8,9 @@ pongmodule_auto.c: pongmodule.spec pongmodule.h
 pongmodule.h: pongmodule.spec
 	$(PLUC) h @srcdir@/pongmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = pongmodule.h
+
 lib_LTLIBRARIES = pongmodule.la
 
 pongmodule_la_SOURCES = \

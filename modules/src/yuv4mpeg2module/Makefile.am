@@ -8,6 +8,9 @@ y4moutputmodule_auto.c: y4moutputmodule.spec y4moutputmodule.h
 y4moutputmodule.h: y4moutputmodule.spec
 	$(PLUC) h @srcdir@/y4moutputmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = y4moutputmodule.h
+
 lib_LTLIBRARIES = y4moutputmodule.la
 
 y4moutputmodule_la_SOURCES = \

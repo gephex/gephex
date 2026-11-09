@@ -8,6 +8,9 @@ effectvsparkmodule_auto.c: effectvsparkmodule.spec effectvsparkmodule.h
 effectvsparkmodule.h: effectvsparkmodule.spec
 	$(PLUC) h $(srcdir)/effectvsparkmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvsparkmodule.h
+
 lib_LTLIBRARIES = effectvsparkmodule.la
 
 effectvsparkmodule_la_SOURCES = \

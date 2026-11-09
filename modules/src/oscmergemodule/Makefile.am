@@ -8,6 +8,9 @@ oscmergemodule_auto.c: oscmergemodule.spec oscmergemodule.h
 oscmergemodule.h: oscmergemodule.spec
 	$(PLUC) h @srcdir@/oscmergemodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = oscmergemodule.h
+
 lib_LTLIBRARIES = oscmergemodule.la
 
 oscmergemodule_la_SOURCES = \

@@ -8,6 +8,9 @@ effectvedgemodule_auto.c: effectvedgemodule.spec effectvedgemodule.h
 effectvedgemodule.h: effectvedgemodule.spec
 	$(PLUC) h $(srcdir)/effectvedgemodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvedgemodule.h
+
 
 lib_LTLIBRARIES = effectvedgemodule.la
 

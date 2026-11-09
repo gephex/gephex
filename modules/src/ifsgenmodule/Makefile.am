@@ -8,6 +8,9 @@ ifsgenmodule_auto.c: ifsgenmodule.spec ifsgenmodule.h
 ifsgenmodule.h: ifsgenmodule.spec
 	$(PLUC) h $(srcdir)/ifsgenmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = ifsgenmodule.h
+
 lib_LTLIBRARIES = ifsgenmodule.la
 
 ifsgenmodule_la_SOURCES = ifsgenmodule_auto.c \

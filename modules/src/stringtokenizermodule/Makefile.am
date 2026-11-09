@@ -8,6 +8,9 @@ stringtokenizermodule_auto.c: stringtokenizermodule.spec stringtokenizermodule.h
 stringtokenizermodule.h: stringtokenizermodule.spec
 	$(PLUC) h @srcdir@/stringtokenizermodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = stringtokenizermodule.h
+
 lib_LTLIBRARIES = stringtokenizermodule.la
 
 stringtokenizermodule_la_SOURCES = \

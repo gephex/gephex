@@ -8,6 +8,9 @@ effectvfiremodule_auto.c: effectvfiremodule.spec effectvfiremodule.h
 effectvfiremodule.h: effectvfiremodule.spec
 	$(PLUC) h $(srcdir)/effectvfiremodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvfiremodule.h
+
 lib_LTLIBRARIES = effectvfiremodule.la
 
 effectvfiremodule_la_SOURCES = \

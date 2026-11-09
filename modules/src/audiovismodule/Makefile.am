@@ -8,6 +8,9 @@ audiovismodule_auto.c: audiovismodule.spec audiovismodule.h
 audiovismodule.h: audiovismodule.spec
 	$(PLUC) h @srcdir@/audiovismodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = audiovismodule.h
+
 lib_LTLIBRARIES = audiovismodule.la
 
 audiovismodule_la_SOURCES = \

@@ -8,6 +8,9 @@ effectvpupmodule_auto.c: effectvpupmodule.spec effectvpupmodule.h
 effectvpupmodule.h: effectvpupmodule.spec
 	$(PLUC) h @srcdir@/effectvpupmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvpupmodule.h
+
 lib_LTLIBRARIES = effectvpupmodule.la
 
 effectvpupmodule_la_SOURCES = \

@@ -8,6 +8,9 @@ effectvwarpmodule_auto.c: effectvwarpmodule.spec effectvwarpmodule.h
 effectvwarpmodule.h: effectvwarpmodule.spec
 	$(PLUC) h @srcdir@/effectvwarpmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvwarpmodule.h
+
 lib_LTLIBRARIES = effectvwarpmodule.la
 
 effectvwarpmodule_la_SOURCES = \

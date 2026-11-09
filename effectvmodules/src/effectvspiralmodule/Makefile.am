@@ -8,6 +8,9 @@ effectvspiralmodule_auto.c: effectvspiralmodule.spec effectvspiralmodule.h
 effectvspiralmodule.h: effectvspiralmodule.spec
 	$(PLUC) h @srcdir@/effectvspiralmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvspiralmodule.h
+
 lib_LTLIBRARIES = effectvspiralmodule.la
 
 effectvspiralmodule_la_SOURCES = \

@@ -8,6 +8,9 @@ chromakeymodule_auto.c: chromakeymodule.spec chromakeymodule.h
 chromakeymodule.h: chromakeymodule.spec
 	$(PLUC) h @srcdir@/chromakeymodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = chromakeymodule.h
+
 chromakeymodule.def: chromakeymodule.spec
 	$(PLUC) def @srcdir@/chromakeymodule.spec
 

@@ -8,6 +8,9 @@ midinotedecmodule_auto.c: midinotedecmodule.spec midinotedecmodule.h
 midinotedecmodule.h: midinotedecmodule.spec
 	$(PLUC) h @srcdir@/midinotedecmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = midinotedecmodule.h
+
 lib_LTLIBRARIES = midinotedecmodule.la
 
 midinotedecmodule_la_SOURCES = \

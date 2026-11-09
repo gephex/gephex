@@ -8,6 +8,9 @@ netcontrolmodule_auto.c: netcontrolmodule.spec netcontrolmodule.h
 netcontrolmodule.h: netcontrolmodule.spec
 	$(PLUC) h @srcdir@/netcontrolmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = netcontrolmodule.h
+
 lib_LTLIBRARIES = netcontrolmodule.la
 
 netcontrolmodule_la_SOURCES = 	netcontrolmodule_auto.c \

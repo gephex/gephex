@@ -8,6 +8,9 @@ planemodule_auto.c: planemodule.spec planemodule.h
 planemodule.h: planemodule.spec
 	$(PLUC) h @srcdir@/planemodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = planemodule.h
+
 lib_LTLIBRARIES = planemodule.la
 
 planemodule_la_SOURCES = \

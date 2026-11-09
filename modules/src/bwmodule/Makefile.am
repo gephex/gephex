@@ -8,6 +8,9 @@ bwmodule_auto.c: bwmodule.spec bwmodule.h
 bwmodule.h: bwmodule.spec
 	$(PLUC) h @srcdir@/bwmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = bwmodule.h
+
 lib_LTLIBRARIES = bwmodule.la
 
 bwmodule_la_SOURCES = \

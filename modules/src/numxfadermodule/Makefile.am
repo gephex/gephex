@@ -8,6 +8,9 @@ numxfadermodule_auto.c: numxfadermodule.spec numxfadermodule.h
 numxfadermodule.h: numxfadermodule.spec
 	$(PLUC) h @srcdir@/numxfadermodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = numxfadermodule.h
+
 lib_LTLIBRARIES = numxfadermodule.la
 
 numxfadermodule_la_SOURCES = 	numxfadermodule_auto.c \

@@ -8,6 +8,9 @@ effectvsimuramodule_auto.c: effectvsimuramodule.spec effectvsimuramodule.h
 effectvsimuramodule.h: effectvsimuramodule.spec
 	$(PLUC) h @srcdir@/effectvsimuramodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvsimuramodule.h
+
 lib_LTLIBRARIES = effectvsimuramodule.la
 
 effectvsimuramodule_la_SOURCES = \

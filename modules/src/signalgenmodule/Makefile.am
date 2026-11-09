@@ -8,6 +8,9 @@ signalgenmodule_auto.c: signalgenmodule.spec signalgenmodule.h
 signalgenmodule.h: signalgenmodule.spec
 	$(PLUC) h @srcdir@/signalgenmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = signalgenmodule.h
+
 lib_LTLIBRARIES = signalgenmodule.la
 signalgenmodule_la_SOURCES = signalgenmodule_auto.c \
 			     signalgenmodule.cpp \

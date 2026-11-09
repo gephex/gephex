@@ -8,6 +8,9 @@ signalplotmodule_auto.c: signalplotmodule.spec signalplotmodule.h
 signalplotmodule.h: signalplotmodule.spec
 	$(PLUC) h @srcdir@/signalplotmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = signalplotmodule.h
+
 lib_LTLIBRARIES = signalplotmodule.la
 
 signalplotmodule_la_SOURCES = \

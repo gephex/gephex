@@ -8,6 +8,9 @@ joystickmodule_auto.c: joystickmodule.spec joystickmodule.h
 joystickmodule.h: joystickmodule.spec
 	$(PLUC) h @srcdir@/joystickmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = joystickmodule.h
+
 lib_LTLIBRARIES = joystickmodule.la
 
 joystickmodule_la_SOURCES = \

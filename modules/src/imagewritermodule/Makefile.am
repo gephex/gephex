@@ -8,6 +8,9 @@ imagewritermodule_auto.c: imagewritermodule.spec imagewritermodule.h
 imagewritermodule.h: imagewritermodule.spec
 	$(PLUC) h $(srcdir)/imagewritermodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = imagewritermodule.h
+
 lib_LTLIBRARIES = imagewritermodule.la
 
 imagewritermodule_la_SOURCES = 	imagewritermodule_auto.c \

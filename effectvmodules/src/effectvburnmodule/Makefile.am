@@ -8,6 +8,9 @@ effectvburnmodule_auto.c: effectvburnmodule.spec effectvburnmodule.h
 effectvburnmodule.h: effectvburnmodule.spec
 	$(PLUC) h @srcdir@/effectvburnmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvburnmodule.h
+
 lib_LTLIBRARIES = effectvburnmodule.la
 
 effectvburnmodule_la_SOURCES = \

@@ -8,6 +8,9 @@ effectvwarholmodule_auto.c: effectvwarholmodule.spec effectvwarholmodule.h
 effectvwarholmodule.h: effectvwarholmodule.spec
 	$(PLUC) h @srcdir@/effectvwarholmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvwarholmodule.h
+
 lib_LTLIBRARIES = effectvwarholmodule.la
 
 effectvwarholmodule_la_SOURCES = \

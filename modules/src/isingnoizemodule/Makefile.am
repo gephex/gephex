@@ -8,6 +8,9 @@ isingnoizemodule_auto.c: isingnoizemodule.spec isingnoizemodule.h
 isingnoizemodule.h: isingnoizemodule.spec
 	$(PLUC) h $(srcdir)/isingnoizemodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = isingnoizemodule.h
+
 lib_LTLIBRARIES = isingnoizemodule.la
 
 isingnoizemodule_la_SOURCES = isingnoizemodule_auto.c                           isingnoizemodule.c isingnoizemodule.h 			  isingnoizemodule.spec 			  isingnoizemodule.xpm

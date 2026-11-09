@@ -8,6 +8,9 @@ audiowavegenmodule_auto.c: audiowavegenmodule.spec audiowavegenmodule.h
 audiowavegenmodule.h: audiowavegenmodule.spec
 	$(PLUC) h @srcdir@/audiowavegenmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = audiowavegenmodule.h
+
 lib_LTLIBRARIES = audiowavegenmodule.la
 
 audiowavegenmodule_la_SOURCES = \

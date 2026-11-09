@@ -8,6 +8,9 @@ effectvtransformmodule_auto.c: effectvtransformmodule.spec effectvtransformmodul
 effectvtransformmodule.h: effectvtransformmodule.spec
 	$(PLUC) h @srcdir@/effectvtransformmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvtransformmodule.h
+
 lib_LTLIBRARIES = effectvtransformmodule.la
 
 effectvtransformmodule_la_SOURCES = \

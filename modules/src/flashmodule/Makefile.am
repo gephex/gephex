@@ -8,6 +8,9 @@ flashmodule_auto.c: flashmodule.spec flashmodule.h
 flashmodule.h: flashmodule.spec
 	$(PLUC) h @srcdir@/flashmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = flashmodule.h
+
 lib_LTLIBRARIES = flashmodule.la
 flashmodule_la_SOURCES = 	flashmodule_auto.c \
 				flashmodule.c \

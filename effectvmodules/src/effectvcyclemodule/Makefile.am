@@ -8,6 +8,9 @@ effectvcyclemodule_auto.c: effectvcyclemodule.spec effectvcyclemodule.h
 effectvcyclemodule.h: effectvcyclemodule.spec
 	$(PLUC) h @srcdir@/effectvcyclemodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvcyclemodule.h
+
 lib_LTLIBRARIES = effectvcyclemodule.la
 
 effectvcyclemodule_la_SOURCES = \

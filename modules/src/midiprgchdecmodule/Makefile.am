@@ -8,6 +8,9 @@ midiprgchdecmodule_auto.c: midiprgchdecmodule.spec midiprgchdecmodule.h
 midiprgchdecmodule.h: midiprgchdecmodule.spec
 	$(PLUC) h @srcdir@/midiprgchdecmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = midiprgchdecmodule.h
+
 lib_LTLIBRARIES = midiprgchdecmodule.la
 
 midiprgchdecmodule_la_SOURCES = \

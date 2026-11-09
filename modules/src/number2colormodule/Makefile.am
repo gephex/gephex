@@ -8,6 +8,9 @@ number2colormodule_auto.c: number2colormodule.spec number2colormodule.h
 number2colormodule.h: number2colormodule.spec
 	$(PLUC) h $(srcdir)/number2colormodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = number2colormodule.h
+
 lib_LTLIBRARIES = number2colormodule.la
 
 number2colormodule_la_SOURCES = number2colormodule_auto.c                           number2colormodule.c number2colormodule.h 			  number2colormodule.spec 			  number2colormodule.xpm

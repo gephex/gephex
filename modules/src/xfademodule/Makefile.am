@@ -8,6 +8,9 @@ xfademodule_auto.c: xfademodule.spec xfademodule.h
 xfademodule.h: xfademodule.spec
 	$(PLUC) h @srcdir@/xfademodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = xfademodule.h
+
 EXEEXT=.@SHAREDLIBEXT@
 
 bin_PROGRAMS = xfademodule

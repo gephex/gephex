@@ -8,6 +8,9 @@ effectvlensmodule_auto.c: effectvlensmodule.spec effectvlensmodule.h
 effectvlensmodule.h: effectvlensmodule.spec
 	$(PLUC) h $(srcdir)/effectvlensmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = effectvlensmodule.h
+
 lib_LTLIBRARIES = effectvlensmodule.la
 
 effectvlensmodule_la_SOURCES = \

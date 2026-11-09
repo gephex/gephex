@@ -8,6 +8,9 @@ frboutmodule_auto.c: frboutmodule.spec frboutmodule.h
 frboutmodule.h: frboutmodule.spec
 	$(PLUC) h @srcdir@/frboutmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = frboutmodule.h
+
 lib_LTLIBRARIES = frboutmodule.la
 
 if HAVE_X11

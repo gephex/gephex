@@ -8,6 +8,9 @@ numoscmodule_auto.c: numoscmodule.spec numoscmodule.h
 numoscmodule.h: numoscmodule.spec
 	$(PLUC) h @srcdir@/numoscmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = numoscmodule.h
+
 lib_LTLIBRARIES = numoscmodule.la
 
 numoscmodule_la_SOURCES = \

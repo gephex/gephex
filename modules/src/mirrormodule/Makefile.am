@@ -8,6 +8,9 @@ mirrormodule_auto.c: mirrormodule.spec mirrormodule.h
 mirrormodule.h: mirrormodule.spec
 	$(PLUC) h @srcdir@/mirrormodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = mirrormodule.h
+
 lib_LTLIBRARIES = mirrormodule.la
 
 mirrormodule_la_SOURCES = \

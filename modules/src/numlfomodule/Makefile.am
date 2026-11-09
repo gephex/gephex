@@ -8,6 +8,9 @@ numlfomodule_auto.c: numlfomodule.spec numlfomodule.h
 numlfomodule.h: numlfomodule.spec
 	$(PLUC) h @srcdir@/numlfomodule.spec 
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = numlfomodule.h
+
 lib_LTLIBRARIES = numlfomodule.la
 
 numlfomodule_la_SOURCES = 	numlfomodule_auto.c \

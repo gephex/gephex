@@ -8,6 +8,9 @@ oscoutmodule_auto.c: oscoutmodule.spec oscoutmodule.h
 oscoutmodule.h: oscoutmodule.spec
 	$(PLUC) h @srcdir@/oscoutmodule.spec
 
+# the generated header must exist before any object is compiled
+BUILT_SOURCES = oscoutmodule.h
+
 lib_LTLIBRARIES = oscoutmodule.la
 
 oscoutmodule_la_SOURCES = \
