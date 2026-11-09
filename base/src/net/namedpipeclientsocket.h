@@ -44,7 +44,7 @@ namespace net
     virtual ~NamedPipeClientSocket();
 
     ISocket* connect(const std::string& remoteHost,
-		     int remotePort) throw(std::runtime_error);
+		     int remotePort);
 
   private:
     void* m_handle;    

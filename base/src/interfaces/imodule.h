@@ -62,8 +62,7 @@ public:
 	* @exception std::runtime_error falls der Input schon
 	*                               mit einem Output verbunden ist.
 	*/
-	virtual void plugIn(utils::AutoPtr<IOutputPlug>& p)
-	  throw (std::runtime_error) = 0;
+	virtual void plugIn(utils::AutoPtr<IOutputPlug>& p) = 0;
 
 	/**
 	* Löst die Verbindung des Inputs.

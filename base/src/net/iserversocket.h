@@ -50,7 +50,7 @@ namespace net
      * Tells the ServerSocket to listen for incoming ocnnection
      * requests. Must be called before accept.
      */
-    virtual void listen() throw(std::runtime_error) = 0;
+    virtual void listen() = 0;
 
     /**
      * Accepts an incoming connection request.
@@ -66,7 +66,7 @@ namespace net
      *     0 is returned in non-blocking operation, when there is no
      *     connection request.
      */
-    virtual ISocket* accept() throw(std::runtime_error) = 0;
+    virtual ISocket* accept() = 0;
   };
 
 }

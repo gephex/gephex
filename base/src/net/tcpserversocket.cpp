@@ -98,12 +98,12 @@ namespace net
 	SocketUtils::shutDownNetwork();
   }
 
-  void TCPServerSocket::listen() throw(std::runtime_error)
+  void TCPServerSocket::listen()
   {
     ::listen(m_socket,1);    
   }
   
-  ISocket* TCPServerSocket::accept() throw(std::runtime_error)
+  ISocket* TCPServerSocket::accept()
   {
     sockaddr accept_sin;
 #if defined(OS_POSIX) && !defined(OS_CYGWIN)

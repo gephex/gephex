@@ -64,7 +64,6 @@ namespace net
   }
   
   ISocket* NamedPipeClientSocket::connect(const std::string& hostName, int portNum)
-     throw(std::runtime_error)
   {
 	//create the pipe name
 	  std::ostringstream os;

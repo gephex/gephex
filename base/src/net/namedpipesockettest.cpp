@@ -72,11 +72,11 @@ private:
   bool _ready;
 };
 
-void NamedPipeSocketTest::pre() throw(std::runtime_error)
+void NamedPipeSocketTest::pre()
 {
 }
 
-void NamedPipeSocketTest::run() throw(std::runtime_error)
+void NamedPipeSocketTest::run()
 {
 
   net::NamedPipeServerSocket server(1234);
@@ -137,7 +137,7 @@ void NamedPipeSocketTest::run() throw(std::runtime_error)
   delete sock2;
 }
 
-void NamedPipeSocketTest::post() throw(std::runtime_error)
+void NamedPipeSocketTest::post()
 {
 }
 

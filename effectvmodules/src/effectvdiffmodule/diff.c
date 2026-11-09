@@ -56,7 +56,7 @@ effect *diffRegister()
 	entry->start = start;
 	entry->stop = stop;
 	entry->draw = draw;
-	//entry->event = event;
+	//entry->event = (int (*)(void *))event;
 
 	return entry;
 }

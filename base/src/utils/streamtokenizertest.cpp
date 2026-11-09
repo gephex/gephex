@@ -38,11 +38,11 @@ StreamTokenizerTest::~StreamTokenizerTest()
 {
 }
 
-void StreamTokenizerTest::pre() throw(std::runtime_error)
+void StreamTokenizerTest::pre()
 {
 }
 
-void StreamTokenizerTest::run() throw(std::runtime_error)
+void StreamTokenizerTest::run()
 {
   std::istringstream stream("Hallo, ein\ttest\nfuer st     \nream");
   utils::StreamTokenizer st(stream);
@@ -77,7 +77,7 @@ void StreamTokenizerTest::run() throw(std::runtime_error)
     throw std::runtime_error("Fehler7");
 }
 
-void StreamTokenizerTest::post() throw(std::runtime_error)
+void StreamTokenizerTest::post()
 {
 }
 /*---------------------------------------------------------------------------*/

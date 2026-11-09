@@ -44,7 +44,7 @@ namespace net
     virtual ~TCPClientSocket();
 
     ISocket* connect(const std::string& remoteHost,
-		     int remotePort) throw(std::runtime_error);
+		     int remotePort);
 
   private:
     int m_socket;

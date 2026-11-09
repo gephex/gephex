@@ -51,7 +51,7 @@ namespace net
      *     to complete the filename
      */
     ISocket* connect(const std::string& basePath,
-		     int remotePort) throw(std::runtime_error);
+		     int remotePort);
 
   private:
     int m_socket;

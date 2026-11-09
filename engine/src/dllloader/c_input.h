@@ -54,8 +54,7 @@ public:
 
 	//	virtual bool hasChanged() const;
 
-	virtual void plugIn(utils::AutoPtr<IOutputPlug>& oPlug)
-	  throw (std::runtime_error);
+	virtual void plugIn(utils::AutoPtr<IOutputPlug>& oPlug);
 
 	virtual void unPlug();
 

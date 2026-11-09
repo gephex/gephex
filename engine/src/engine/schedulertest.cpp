@@ -93,11 +93,11 @@ SchedulerTest::~SchedulerTest()
 {
 }
 
-void SchedulerTest::pre() throw(std::runtime_error)
+void SchedulerTest::pre()
 {
 }
 
-void SchedulerTest::run() throw(std::runtime_error)
+void SchedulerTest::run()
 {  
   engine::Scheduler sq;
 
@@ -126,7 +126,7 @@ void SchedulerTest::run() throw(std::runtime_error)
   std::cout << "Zeit : " << time << "ms" << std::endl;
 }
 
-void SchedulerTest::post() throw(std::runtime_error)
+void SchedulerTest::post()
 {
 }
 /*---------------------------------------------------------------------------*/

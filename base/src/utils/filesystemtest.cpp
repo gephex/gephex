@@ -41,11 +41,11 @@ std::string FileSystemTest::getDescription() const
 	return "";
 }
 
-void FileSystemTest::pre() throw(std::runtime_error)
+void FileSystemTest::pre()
 {
 }
 
-void FileSystemTest::run() throw(std::runtime_error)
+void FileSystemTest::run()
 {
 	/*std::list<utils::DirEntry> l;
 	utils::FileSystem::listDir("/home/mistkerl",l);
@@ -77,6 +77,6 @@ void FileSystemTest::run() throw(std::runtime_error)
 	}
 }
 
-void FileSystemTest::post() throw(std::runtime_error)
+void FileSystemTest::post()
 {
 }

@@ -55,6 +55,6 @@ class FrameCache
 
  private:
   class Impl;
-  std::auto_ptr<Impl> m_impl;
+  std::unique_ptr<Impl> m_impl;
 };
 #endif

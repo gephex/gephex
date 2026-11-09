@@ -181,7 +181,7 @@ void AviFileDriver::load_file(const std::string& file_name, VideoInfo& info)
       
       try
         {
-	  std::auto_ptr<avm::StreamInfo> 
+	  std::unique_ptr<avm::StreamInfo> 
 	    sinfo(m_impl->videoStream->GetStreamInfo());
 
 	  if (sinfo.get() == 0)

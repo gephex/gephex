@@ -47,6 +47,6 @@ class AviFileDriver : public VideoFileDriver
 	                int width, int height);
   
  private:
-  std::auto_ptr<AviFileDriverImpl> m_impl;
+  std::unique_ptr<AviFileDriverImpl> m_impl;
 };
 #endif

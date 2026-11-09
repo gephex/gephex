@@ -94,7 +94,6 @@ namespace net
   
   ISocket* DomainClientSocket::connect(const std::string& basePath,
 				       int remotePort)
-    throw(std::runtime_error)
   {
     if (m_socket == INVALID_SOCKET)
       {

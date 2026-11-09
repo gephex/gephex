@@ -10,6 +10,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "EffecTV.h"
+
+RGB32* screen_getaddress(void);
 #include "utils.h"
 #include "heart.inc"
 
@@ -225,7 +227,7 @@ effect *dotRegister()
 	entry->start = start;
 	entry->stop = stop;
 	entry->draw = draw;
-	entry->event = event;
+	entry->event = (int (*)(void *))event;
 
 	makePattern();
 	makeHeartPattern();

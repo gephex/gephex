@@ -35,6 +35,11 @@
 
 #include "builtin_functions.h"
 
+/* implemented by the scanner, resp. at the end of parser.y */
+int yylex(void* lval);
+int yyerror(char* s);
+struct yy_buffer_state* yy_scan_string(const char* str);
+
 /*---------------------------------------------------------------------------*/
 
 %}

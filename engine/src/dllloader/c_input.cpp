@@ -102,7 +102,6 @@ IModule* CInput::getConnectedModule() const
 }
 
 void CInput::plugIn(utils::AutoPtr<IOutputPlug>& newOPlug)
-  throw (std::runtime_error)
 {
   assert(!m_isConnected); //TODO
   assert(oPlug == 0); //TODO

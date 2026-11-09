@@ -82,7 +82,7 @@ namespace net
      * 
      * @throw IOException if there is an IO Error
      */
-    virtual bool receive(utils::Buffer& b) throw (IOException) = 0; 
+    virtual bool receive(utils::Buffer& b) = 0; 
 
     /**
      * Get the (local) port number to which the socket is bound.

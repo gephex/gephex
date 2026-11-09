@@ -38,11 +38,11 @@ SharedLibraryTest::~SharedLibraryTest()
 {
 }
 
-void SharedLibraryTest::pre() throw(std::runtime_error)
+void SharedLibraryTest::pre()
 {
 }
 
-void SharedLibraryTest::run() throw(std::runtime_error)
+void SharedLibraryTest::run()
 {
 #if defined(OS_WIN32)
   const std::string LIB_NAME = "addmodule.dll";
@@ -93,7 +93,7 @@ void SharedLibraryTest::run() throw(std::runtime_error)
 
 }
 
-void SharedLibraryTest::post() throw(std::runtime_error)
+void SharedLibraryTest::post()
 {
 }
 /*---------------------------------------------------------------------------*/

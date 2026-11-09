@@ -117,7 +117,7 @@ GL_new_instance(const char* server_name,
 #endif
   try
     {
-      std::auto_ptr<DriverInstance> sh(new DriverInstance);
+      std::unique_ptr<DriverInstance> sh(new DriverInstance);
       
       sh->win_xsize = width;
       sh->win_ysize = height;

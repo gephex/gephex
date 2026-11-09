@@ -46,7 +46,7 @@ namespace net
     virtual int send(const utils::Buffer& data) 
       /*const throw (IOException,SocketException)*/;
     
-    virtual bool receive(utils::Buffer& b) throw (IOException);
+    virtual bool receive(utils::Buffer& b);
     
     virtual bool connected() const;
 

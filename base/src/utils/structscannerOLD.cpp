@@ -95,7 +95,7 @@ void StructScanner::processContent(const std::string& content) const
 }
 
 
-void StructScanner::scan(const std::string& text) const throw (std::runtime_error)
+void StructScanner::scan(const std::string& text) const
 {
 	std::string name;
 	std::string content;

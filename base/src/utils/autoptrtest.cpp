@@ -54,11 +54,11 @@ std::string AutoPtrTest::getDescription() const
 	return "";
 }
 
-void AutoPtrTest::pre() throw(std::runtime_error)
+void AutoPtrTest::pre()
 {
 }
 
-void AutoPtrTest::run() throw(std::runtime_error)
+void AutoPtrTest::run()
 {
   bool destroyed = false;
 
@@ -90,7 +90,7 @@ void AutoPtrTest::run() throw(std::runtime_error)
     throw std::runtime_error("Fehler!!");
 }
 
-void AutoPtrTest::post() throw(std::runtime_error)
+void AutoPtrTest::post()
 {
 }
 

@@ -67,7 +67,7 @@ StructScannerTest::~StructScannerTest()
 {
 }
 
-void StructScannerTest::pre() throw(std::runtime_error)
+void StructScannerTest::pre()
 {
 }
 
@@ -95,7 +95,7 @@ static void testDummy(DummyListener& dummy,std::string name,
     }
 }
 
-void StructScannerTest::run() throw(std::runtime_error)
+void StructScannerTest::run()
 {
   DummyListener dl;
   utils::StructScanner sScanner(dl);
@@ -154,7 +154,7 @@ void StructScannerTest::run() throw(std::runtime_error)
   
 }
 
-void StructScannerTest::post() throw(std::runtime_error)
+void StructScannerTest::post()
 {
 }
 /*---------------------------------------------------------------------------*/

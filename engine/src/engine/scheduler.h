@@ -108,10 +108,9 @@ namespace engine
 
     virtual void run();
 
-    virtual void killTask(ITask& task) throw (std::runtime_error);
+    virtual void killTask(ITask& task);
 
-    virtual void changeTaskTime(ITask& task,int newTimeInMillis)
-      throw (std::runtime_error);
+    virtual void changeTaskTime(ITask& task,int newTimeInMillis);
 
     virtual void stop();
   private:

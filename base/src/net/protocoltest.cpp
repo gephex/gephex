@@ -135,7 +135,7 @@ std::string ProtocolTest::getDescription() const
   return "";
 }
 
-void ProtocolTest::pre() throw(std::runtime_error)
+void ProtocolTest::pre()
 {
 
 }
@@ -201,12 +201,12 @@ static void test2()
 		throw std::runtime_error("sync failed");
 }
 
-void ProtocolTest::run() throw(std::runtime_error)
+void ProtocolTest::run()
 {
    test1();
    test2(); 
 }
 
-void ProtocolTest::post() throw(std::runtime_error)
+void ProtocolTest::post()
 {
 }

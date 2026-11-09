@@ -9,6 +9,7 @@ AM_CONFIG_HEADER(config.h)
 
 # Checks for programs.
 AC_PROG_CXX
+CXXFLAGS="$CXXFLAGS -std=gnu++17"
 AC_PROG_LIBTOOL
 
 # autoheader kram:

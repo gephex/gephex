@@ -40,11 +40,11 @@ std::string CircularBufferTest::getDescription() const
 	return "";
 }
 
-void CircularBufferTest::pre() throw(std::runtime_error)
+void CircularBufferTest::pre()
 {
 }
 
-void CircularBufferTest::run() throw(std::runtime_error)
+void CircularBufferTest::run()
 {
   int l0 = 31;
   int l1 = 100;
@@ -108,7 +108,7 @@ void CircularBufferTest::run() throw(std::runtime_error)
   delete[] b1;  
 }
 
-void CircularBufferTest::post() throw(std::runtime_error)
+void CircularBufferTest::post()
 {
 }
 

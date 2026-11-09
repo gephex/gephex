@@ -183,12 +183,12 @@ static void test_tagger(const Tag& t)
     }
 }
 
-void TaggerTest::pre() throw(std::runtime_error)
+void TaggerTest::pre()
 {
 
 }
 
-void TaggerTest::run() throw(std::runtime_error)
+void TaggerTest::run()
 {
   test_tagutil<std::string, net::StringTagUtil>("harr harr horr");
   test_tagutil<uint_32, net::UInt32TagUtil>(192837465);
@@ -197,6 +197,6 @@ void TaggerTest::run() throw(std::runtime_error)
   test_tagger<uint_32, net::UInt32TagUtil>(1111);
 }
 
-void TaggerTest::post() throw(std::runtime_error)
+void TaggerTest::post()
 {
 }

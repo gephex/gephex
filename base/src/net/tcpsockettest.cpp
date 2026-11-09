@@ -74,11 +74,11 @@ private:
   bool _ready;
 };
 
-void TCPSocketTest::pre() throw(std::runtime_error)
+void TCPSocketTest::pre()
 {
 }
 
-void TCPSocketTest::run() throw(std::runtime_error)
+void TCPSocketTest::run()
 {
 
   net::TCPServerSocket server(1234);
@@ -139,7 +139,7 @@ void TCPSocketTest::run() throw(std::runtime_error)
   delete sock2;
 }
 
-void TCPSocketTest::post() throw(std::runtime_error)
+void TCPSocketTest::post()
 {
 }
 

@@ -72,11 +72,11 @@ private:
   bool _ready;
 };
 
-void DomainSocketTest::pre() throw(std::runtime_error)
+void DomainSocketTest::pre()
 {
 }
 
-void DomainSocketTest::run() throw(std::runtime_error)
+void DomainSocketTest::run()
 {
 
   net::DomainServerSocket server("/tmp/test_",1234);
@@ -137,7 +137,7 @@ void DomainSocketTest::run() throw(std::runtime_error)
   delete sock2;
 }
 
-void DomainSocketTest::post() throw(std::runtime_error)
+void DomainSocketTest::post()
 {
 }
 

@@ -46,6 +46,6 @@ public:
 					int width, int height);
 
  private:
-  std::auto_ptr<DSHOWDriverImpl> m_impl;
+  std::unique_ptr<DSHOWDriverImpl> m_impl;
 };
 #endif

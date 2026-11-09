@@ -274,7 +274,7 @@ namespace gui
       }
   }
 
-  void VJMainWindow::connectToRealEngine() throw (std::runtime_error)
+  void VJMainWindow::connectToRealEngine()
   {
     engineWrapper->connect();
     
@@ -289,7 +289,7 @@ namespace gui
     shutDownEngineAction->setEnabled(true);
   }
 
-  void VJMainWindow::disconnectFromRealEngine() throw (std::runtime_error)
+  void VJMainWindow::disconnectFromRealEngine()
   {
     engineWrapper->disconnect();
     

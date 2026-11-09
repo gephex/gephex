@@ -38,7 +38,7 @@ std::string XmlutilsTest::getDescription() const
 	return "";
 }
 
-void XmlutilsTest::pre() throw(std::runtime_error)
+void XmlutilsTest::pre()
 {
 }
 
@@ -90,14 +90,14 @@ void test3()
     throw std::runtime_error((std::string("tag is '") + tag 
                               + std::string(" but should be 'bumm'")).c_str());
 }
-void XmlutilsTest::run() throw(std::runtime_error)
+void XmlutilsTest::run()
 {
   test1();
   test2();
   test3();
 }
 
-void XmlutilsTest::post() throw(std::runtime_error)
+void XmlutilsTest::post()
 {
 }
 

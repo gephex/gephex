@@ -84,11 +84,11 @@ std::string ClassInfoTest::getDescription() const
 	return "";
 }
 
-void ClassInfoTest::pre() throw(std::runtime_error)
+void ClassInfoTest::pre()
 {
 }
 
-void ClassInfoTest::run() throw(std::runtime_error)
+void ClassInfoTest::run()
 {
   ModuleClassInfoSenderNet mcisn;
   aDummyReceiver bla;
@@ -103,6 +103,6 @@ void ClassInfoTest::run() throw(std::runtime_error)
 		
 }	
 
-void ClassInfoTest::post() throw(std::runtime_error)
+void ClassInfoTest::post()
 {
 }

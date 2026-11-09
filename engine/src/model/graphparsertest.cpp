@@ -37,7 +37,7 @@ GraphParserTest::~GraphParserTest()
 
 }
 
-void GraphParserTest::pre() throw(std::runtime_error)
+void GraphParserTest::pre()
 {
 
 }
@@ -179,13 +179,13 @@ void test2()
 
   check_graph1(g);
 }
-void GraphParserTest::run() throw(std::runtime_error)
+void GraphParserTest::run()
 {
   test1();
   test2();
 }
 
-void GraphParserTest::post() throw(std::runtime_error)
+void GraphParserTest::post()
 {
 
 }

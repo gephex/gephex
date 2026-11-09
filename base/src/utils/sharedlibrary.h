@@ -67,7 +67,7 @@ namespace utils
     void* loadSymbol(const std::string& name) const;
 
   private:
-    std::auto_ptr<SharedLibraryImpl> m_impl;
+    std::unique_ptr<SharedLibraryImpl> m_impl;
 
     std::string m_TODOName;
   };

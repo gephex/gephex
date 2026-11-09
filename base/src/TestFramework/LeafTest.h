@@ -29,9 +29,9 @@ class LeafTest : public Test
 public:
 	virtual void action(Tester&);
 
-	virtual void pre() throw(std::runtime_error) = 0;
-	virtual void run() throw(std::runtime_error) = 0;
-	virtual void post() throw(std::runtime_error) = 0;
+	virtual void pre() = 0;
+	virtual void run() = 0;
+	virtual void post() = 0;
 };
 
 #endif

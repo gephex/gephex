@@ -103,11 +103,11 @@ std::string NodelControlReceiverTest::getDescription() const
 	return "";
 }
 
-void NodelControlReceiverTest::pre() throw(std::runtime_error)
+void NodelControlReceiverTest::pre()
 {
 }
 
-void NodelControlReceiverTest::run() throw(std::runtime_error)
+void NodelControlReceiverTest::run()
 {
   ModelControlSenderNet mcsn;
   DummyReceiver bla;
@@ -122,7 +122,7 @@ void NodelControlReceiverTest::run() throw(std::runtime_error)
 		
 }	
 
-void NodelControlReceiverTest::post() throw(std::runtime_error)
+void NodelControlReceiverTest::post()
 {
 }
 

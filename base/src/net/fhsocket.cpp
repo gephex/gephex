@@ -96,7 +96,7 @@ namespace net
 		return sent;
 	}
 	
-	bool FHSocket::receive(utils::Buffer& b) throw (IOException)
+	bool FHSocket::receive(utils::Buffer& b)
 	{
 		static const int MAX_MSG_LEN=1024;
 		static unsigned char buf[MAX_MSG_LEN];

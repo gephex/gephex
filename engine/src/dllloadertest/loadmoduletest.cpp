@@ -108,11 +108,11 @@ public:
 	virtual void typeClassLoaded(int typeClassID, const TypeInfo& info_) {};
 };
 
-void LoadModuleTest::pre() throw (std::runtime_error)
+void LoadModuleTest::pre()
 {
 }
 
-void LoadModuleTest::run() throw (std::runtime_error)
+void LoadModuleTest::run()
 {
 	DummyModuleClassReceiver classReceiver;
 	DummyModuleClassInfoReceiver infoReceiver;
@@ -133,6 +133,6 @@ void LoadModuleTest::run() throw (std::runtime_error)
 
 }
 
-void LoadModuleTest::post() throw (std::runtime_error)
+void LoadModuleTest::post()
 {
 }

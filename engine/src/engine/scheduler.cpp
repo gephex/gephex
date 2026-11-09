@@ -59,7 +59,7 @@ namespace engine
 							     timeInMillis)));
   }
 	
-  void Scheduler::killTask(ITask& task) throw (std::runtime_error)
+  void Scheduler::killTask(ITask& task)
   {
     for (TaskList::iterator i = tasks.begin(); i != tasks.end(); ++i)
       {
@@ -74,7 +74,6 @@ namespace engine
   }
 	
   void Scheduler::changeTaskTime(ITask& task,int newTimeInMillis)
-    throw (std::runtime_error)
   {
     for (TaskList::iterator i = tasks.begin(); i != tasks.end(); ++i)
       {

@@ -43,9 +43,9 @@ namespace net
 	  explicit NamedPipeServerSocket(int localPort);
 	  virtual ~NamedPipeServerSocket();
 
-    void listen() throw(std::runtime_error);
+    void listen();
 
-    ISocket* accept() throw(std::runtime_error);
+    ISocket* accept();
 
   private:
 	  NamedPipeImpl* m_impl;

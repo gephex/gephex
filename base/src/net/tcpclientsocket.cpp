@@ -122,7 +122,6 @@ namespace net
   }
   
   ISocket* TCPClientSocket::connect(const std::string& hostName, int portNum)
-     throw(std::runtime_error)
   {
     if (m_socket == INVALID_SOCKET)
       {

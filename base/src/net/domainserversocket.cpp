@@ -91,12 +91,12 @@ namespace net
     SocketUtils::closeSocket(m_socket);
   }
 
-  void DomainServerSocket::listen() throw(std::runtime_error)
+  void DomainServerSocket::listen()
   {
     ::listen(m_socket,1);    
   }
   
-  ISocket* DomainServerSocket::accept() throw(std::runtime_error)
+  ISocket* DomainServerSocket::accept()
   {
     sockaddr_un remote;
 #if defined(OS_POSIX) && !defined(OS_CYGWIN)

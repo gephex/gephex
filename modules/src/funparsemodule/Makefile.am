@@ -42,14 +42,9 @@ EXTRA_DIST = parser.y scanner.flex \
 
 scanner.o: parser.tab.h
 
-scanner.c: @srcdir@/scanner.flex
-	flex -oscanner.c @srcdir@/scanner.flex
-
-parser.tab.h: @srcdir@/parser.y
-	bison -d @srcdir@/parser.y
-
-parser.tab.c: @srcdir@/parser.y
-	bison -d @srcdir@/parser.y
+# parser.tab.[ch] and scanner.c are checked in: parser.y needs bison 2.x, the
+# YYPARSE_PARAM macro it relies on was removed in bison 3. Regenerate manually
+# with "bison -d parser.y" and "flex -oscanner.c scanner.flex" when needed.
 
 
 funparsemodule_la_LDFLAGS = -module -avoid-version -no-undefined

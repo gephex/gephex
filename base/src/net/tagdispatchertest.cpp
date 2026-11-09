@@ -63,11 +63,11 @@ private:
   utils::Buffer m_buf;
 };
 
-void TagDispatcherTest::pre() throw(std::runtime_error)
+void TagDispatcherTest::pre()
 {
 }
 
-void TagDispatcherTest::run() throw(std::runtime_error)
+void TagDispatcherTest::run()
 {
 
   net::TagDispatcher<int> dispatcher;
@@ -139,6 +139,6 @@ void TagDispatcherTest::run() throw(std::runtime_error)
 
 }
 
-void TagDispatcherTest::post() throw(std::runtime_error)
+void TagDispatcherTest::post()
 {
 }

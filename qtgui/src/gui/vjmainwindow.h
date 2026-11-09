@@ -127,8 +127,8 @@ namespace gui
     void unbuildModuleBar(void);
     void clearSceleton(void);
 
-    void connectToRealEngine() throw (std::runtime_error);
-    void disconnectFromRealEngine() throw (std::runtime_error);
+    void connectToRealEngine();
+    void disconnectFromRealEngine();
       
     // Actions
     QAction* quitAction;
@@ -148,8 +148,8 @@ namespace gui
     EditorWidget* editorWidget;
     LogWindow* logWindow;
 
-    std::auto_ptr<ProxyErrorReceiver> m_error_proxy;
-    std::auto_ptr<EngineWrapper> engineWrapper;
+    std::unique_ptr<ProxyErrorReceiver> m_error_proxy;
+    std::unique_ptr<EngineWrapper> engineWrapper;
 
     bool running;
     bool connected;	

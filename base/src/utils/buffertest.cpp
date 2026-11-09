@@ -39,11 +39,11 @@ std::string BufferTest::getDescription() const
 	return "";
 }
 
-void BufferTest::pre() throw(std::runtime_error)
+void BufferTest::pre()
 {
 }
 
-void BufferTest::run() throw(std::runtime_error)
+void BufferTest::run()
 {
   // teste ob sich der buffer die daten kopiert
   std::string msg = "Hallo Kinder";
@@ -82,7 +82,7 @@ void BufferTest::run() throw(std::runtime_error)
 
 }
 
-void BufferTest::post() throw(std::runtime_error)
+void BufferTest::post()
 {
 }
 

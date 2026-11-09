@@ -40,7 +40,7 @@ XMLListenerTest::~XMLListenerTest()
 void XMLListenerTest::pre()
 {}
 
-void XMLListenerTest::run() throw(std::runtime_error)
+void XMLListenerTest::run()
 {
 	//create a dummy map with a fakie fucking modulewhateverinfo....
 	std::vector<std::pair<std::string, std::string> > outs(1);

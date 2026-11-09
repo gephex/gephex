@@ -83,7 +83,6 @@ std::string StructReader::getName() const
 }
 
 bool StructReader::getBoolValue(const std::string& name) const
-  throw (std::runtime_error)
 {
   std::string value = find(name);
 
@@ -100,7 +99,6 @@ bool StructReader::getBoolValue(const std::string& name) const
 }
 
 int StructReader::getIntValue(const std::string& name) const
-  throw (std::runtime_error)
 {
   std::string value = find(name);
   
@@ -119,7 +117,6 @@ int StructReader::getIntValue(const std::string& name) const
 }
 
 std::string StructReader::getStringValue(const std::string& name) const
-  throw (std::runtime_error)
 {
   std::string value = find(name);
 

@@ -39,16 +39,16 @@ public:
 		return "An important test";
 	}
 
-	virtual void pre() throw(std::runtime_error)
+	virtual void pre()
 	{
 	}
 
-	virtual void run() throw(std::runtime_error)
+	virtual void run()
 	{
 		throw std::runtime_error("Hello");
 	}
 
-	virtual void post() throw(std::runtime_error)
+	virtual void post()
 	{
 	}
 };

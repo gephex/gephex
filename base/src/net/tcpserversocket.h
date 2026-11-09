@@ -43,9 +43,9 @@ namespace net
     explicit TCPServerSocket(int localPort);
     virtual ~TCPServerSocket();
 
-    void listen() throw(std::runtime_error);
+    void listen();
 
-    ISocket* accept() throw(std::runtime_error);
+    ISocket* accept();
 
   private:
     int m_localPort;

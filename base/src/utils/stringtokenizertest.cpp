@@ -36,11 +36,11 @@ StringTokenizerTest::~StringTokenizerTest()
 {
 }
 
-void StringTokenizerTest::pre() throw(std::runtime_error)
+void StringTokenizerTest::pre()
 {
 }
 
-void StringTokenizerTest::run() throw(std::runtime_error)
+void StringTokenizerTest::run()
 {
   utils::StringTokenizer st("Hallo, ein\ttest\nfuer st");
   std::string token;
@@ -70,7 +70,7 @@ void StringTokenizerTest::run() throw(std::runtime_error)
     throw std::runtime_error("Fehler6");
 }
 
-void StringTokenizerTest::post() throw(std::runtime_error)
+void StringTokenizerTest::post()
 {
 }
 /*---------------------------------------------------------------------------*/

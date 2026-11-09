@@ -138,7 +138,7 @@ namespace gui
     
     std::list<std::string>::const_iterator 
       it = std::find_if(dirs.begin(), dirs.end(), 
-			std::bind2nd(std::ptr_fun(is_prefix), path));
+			[&path](const std::string& dir) { return is_prefix(dir, path); });
 
     if (it == dirs.end())
       {

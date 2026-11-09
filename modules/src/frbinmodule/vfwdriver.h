@@ -47,6 +47,6 @@ public:
 		            int width, int height);
 
  private:
-  std::auto_ptr<VFWDriverImpl> m_impl;
+  std::unique_ptr<VFWDriverImpl> m_impl;
 };
 #endif

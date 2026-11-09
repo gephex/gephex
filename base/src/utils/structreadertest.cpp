@@ -36,11 +36,11 @@ StructReaderTest::~StructReaderTest()
 {
 }
 
-void StructReaderTest::pre() throw(std::runtime_error)
+void StructReaderTest::pre()
 {
 }
 
-void StructReaderTest::run() throw(std::runtime_error)
+void StructReaderTest::run()
 {
   std::string structure = "test { var1=1; var2=Hallo; var3=true; }";
   utils::StructReader reader(structure);
@@ -68,7 +68,7 @@ void StructReaderTest::run() throw(std::runtime_error)
     throw std::runtime_error("Typueberpruefung fehlgeschlagen");
 }
 
-void StructReaderTest::post() throw(std::runtime_error)
+void StructReaderTest::post()
 {
 }
 /*---------------------------------------------------------------------------*/

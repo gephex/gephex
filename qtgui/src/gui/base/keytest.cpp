@@ -38,11 +38,11 @@ KeyTest::~KeyTest()
 {
 }
 
-void KeyTest::pre() throw(std::runtime_error)
+void KeyTest::pre()
 {
 }
 
-void KeyTest::run() throw(std::runtime_error)
+void KeyTest::run()
 {
   gui::Key k1(Key::Key_A, Key::AltModifier);
   
@@ -69,7 +69,7 @@ void KeyTest::run() throw(std::runtime_error)
     }
 }
 
-void KeyTest::post() throw(std::runtime_error)
+void KeyTest::post()
 {
 }
 /*---------------------------------------------------------------------------*/

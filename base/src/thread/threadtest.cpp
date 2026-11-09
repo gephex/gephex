@@ -71,15 +71,15 @@ void SimpleRunner::run()
 
 /*---------------------------------------------------------------------------*/
 
-void ThreadTest::pre() throw(std::runtime_error)
+void ThreadTest::pre()
 {
 }
 
-void ThreadTest::post() throw(std::runtime_error)
+void ThreadTest::post()
 {
 }
 
-void ThreadTest::run() throw(std::runtime_error) 
+void ThreadTest::run() 
 {
   tu = new thread::ThreadUtilPOSIX();
 

@@ -103,12 +103,12 @@ namespace net
    delete m_impl;
   }
 
-  void NamedPipeServerSocket::listen() throw(std::runtime_error)
+  void NamedPipeServerSocket::listen()
   {
    
   }
   
-  ISocket* NamedPipeServerSocket::accept() throw(std::runtime_error)
+  ISocket* NamedPipeServerSocket::accept()
   {
 	 //std::cout << "Accepting on named pipe..." << std::endl;
 	int error = ConnectNamedPipe(m_impl->m_handle, 0);

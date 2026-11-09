@@ -41,6 +41,8 @@
 #include "EffecTV.h"
 #include "utils.h"
 
+RGB32 *stretching_buffer = 0;
+
 #include "basic_types.h"
 
 //--------------------------------------------------------------------------

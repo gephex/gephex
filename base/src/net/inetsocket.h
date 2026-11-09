@@ -51,12 +51,12 @@ namespace net
      * wird eine Exception geworfen //TODO!!!!!
      * Ob die Methode blockiert hängt von der konkreten Implementierung ab.
      */
-    virtual void buildConnection() throw(std::runtime_error) = 0;
+    virtual void buildConnection() = 0;
 
     /**
      *
      */
-    //    virtual int send(const utils::Buffer& buf) throw(std::runtime_error);
+    //    virtual int send(const utils::Buffer& buf);
 
 
     /**

@@ -94,7 +94,7 @@ public:
     try
       {
 	
-    vd = std::auto_ptr<v4l1_device>(new v4l1_device(device_name));
+    vd = std::unique_ptr<v4l1_device>(new v4l1_device(device_name));
 
     // get capture dimensions
     video_window videoWindow;
@@ -230,7 +230,7 @@ private:
   void* m_mmapBase;
   unsigned int m_mmapSize;
   std::vector<uint32_t*> m_frame_ptr;
-  std::auto_ptr<v4l1_device> vd;
+  std::unique_ptr<v4l1_device> vd;
   uint32_t* m_tmp_img;
 };
 

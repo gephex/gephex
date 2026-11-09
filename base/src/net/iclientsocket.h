@@ -61,7 +61,7 @@ namespace net
      * @return a new Socket that represents the connection
      */
     virtual ISocket* connect(const std::string& remoteHost,
-		     int remotePort) throw(std::runtime_error) = 0;
+		     int remotePort) = 0;
   };
 
 }

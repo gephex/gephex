@@ -42,11 +42,11 @@ BufferStreamTest::~BufferStreamTest()
 {
 }
 
-void BufferStreamTest::pre() throw(std::runtime_error)
+void BufferStreamTest::pre()
 {
 }
 
-void BufferStreamTest::run() throw(std::runtime_error)
+void BufferStreamTest::run()
 {
   {
     utils::Buffer buf(100);
@@ -126,7 +126,7 @@ void BufferStreamTest::run() throw(std::runtime_error)
   }
 }
 
-void BufferStreamTest::post() throw(std::runtime_error)
+void BufferStreamTest::post()
 {
 }
 /*---------------------------------------------------------------------------*/

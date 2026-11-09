@@ -47,6 +47,6 @@ public:
 	                int width, int height);
 
  private:
-  std::auto_ptr<Mpeg3DriverImpl> m_impl;
+  std::unique_ptr<Mpeg3DriverImpl> m_impl;
 };
 #endif
