@@ -5,7 +5,7 @@ AC_CONFIG_SRCDIR([base/src/utils/autoptr.h])
 AC_CANONICAL_TARGET
 
 AM_INIT_AUTOMAKE(gephex,0.4.5)
-AM_CONFIG_HEADER(config.h)
+AC_CONFIG_HEADERS([config.h])
 
 # Checks for programs.
 AC_PROG_CXX
@@ -390,7 +390,7 @@ AC_SUBST(gphx_type_lib_dir, '$(prefix)/lib/gephex-0.4/types')
 AC_MSG_CHECKING([command to convert from docbook to man])
 
 docbooktoxman=""
-if test -e `which xmlto`
+if which xmlto >/dev/null 2>&1
 then
   docbooktoxman="`which xmlto` man"
 else
