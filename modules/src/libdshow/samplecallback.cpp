@@ -1,3 +1,4 @@
+#include <cstring>
 #include "samplecallback.h"
 
 #include <cassert>

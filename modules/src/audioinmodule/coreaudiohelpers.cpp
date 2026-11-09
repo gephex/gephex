@@ -1,3 +1,4 @@
+#include <cstring>
 #include "coreaudiohelpers.h"
 
 #include <pthread.h>

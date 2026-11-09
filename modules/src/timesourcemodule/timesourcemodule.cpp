@@ -1,3 +1,4 @@
+#include <cstring>
 #include "timesourcemodule.h"
 
 #include "config.h"
