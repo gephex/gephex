@@ -75,7 +75,12 @@ case $host in
   AC_DEFINE([OS_POSIX])
   AC_MSG_RESULT([Linux detected.])
   SHARED_COMP_FLAGS="-fpic"
-  SHARED_LD_FLAGS="-shared -fpic"
+  # libtool silently drops a plain -shared when linking "programs"
+  SHARED_LD_FLAGS="-Wc,-shared -fpic"
+  # helper libraries (libeffectv.a, libmidi.a, ...) are linked into the
+  # modules, which needs position independent code on x86_64
+  CFLAGS="$CFLAGS -fPIC"
+  CXXFLAGS="$CXXFLAGS -fPIC"
  ;;
 *-*-*bsd*)
   AC_DEFINE([OS_BSD])
@@ -152,6 +157,7 @@ AM_PATH_QT([5.0.0], $QTLIBEXT, have_qt=yes, have_qt=no)
 AM_CONDITIONAL(HAVE_QT, test "x$have_qt" = "xyes")
 
 # Checks for libraries.
+AC_CHECK_LIB(m,sin)
 AC_CHECK_LIB(dl,dlopen,
    LIB_DL_FLAGS="-ldl"
 )
