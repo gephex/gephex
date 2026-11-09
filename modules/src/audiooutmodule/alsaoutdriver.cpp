@@ -75,8 +75,19 @@ void AlsaOutDriver::open(device_id_t device,
   snprintf(buffer, sizeof(buffer), "plughw:%i,0,0", device);
 
   err = snd_pcm_open(&handle, buffer,
-                     SND_PCM_STREAM_PLAYBACK, 
+                     SND_PCM_STREAM_PLAYBACK,
                      SND_PCM_NONBLOCK);
+
+  // On current desktops the sound server (PipeWire, PulseAudio) owns the
+  // hardware, so the first device falls back to the "default" pcm.
+  if (err < 0 && device == 0)
+    {
+      snprintf(buffer, sizeof(buffer), "default");
+      err = snd_pcm_open(&handle, buffer,
+                         SND_PCM_STREAM_PLAYBACK,
+                         SND_PCM_NONBLOCK);
+    }
+
   if (err < 0)
     {
       std::ostringstream os;
@@ -93,7 +104,7 @@ void AlsaOutDriver::open(device_id_t device,
       std::ostringstream os;
       os << "cannot allocate hardware parameter structure ("
 	 << snd_strerror(err) << ")";
-      snd_pcm_close(m_impl->handle);
+      snd_pcm_close(handle);
       throw std::runtime_error(os.str().c_str());
     }
 

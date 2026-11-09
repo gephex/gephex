@@ -123,7 +123,13 @@ void update(void* instance)
         }
 
 #if defined(WITH_OSS)
+      // OSS is gone on current Linux systems, so "default" means alsa
+      // if it is available (just like in the audiooutmodule)
+#if defined(WITH_ASOUNDLIB)
+      if (m_driver_name == "oss")
+#else
       if (m_driver_name == "oss"  || m_driver_name == "default")
+#endif
 	{
 	  my->drv = new OSSDriver();
 	  s_log(2, "Using OSS driver");
@@ -131,7 +137,7 @@ void update(void* instance)
       else
 #endif
 #if defined(WITH_ASOUNDLIB)
-        if (m_driver_name == "alsa")
+        if (m_driver_name == "alsa" || m_driver_name == "default")
 	{
 	  my->drv = new AlsaDriver();
 	  s_log(2, "Using alsa driver");
