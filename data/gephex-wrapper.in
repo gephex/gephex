@@ -65,6 +65,21 @@ else
     fi   
 fi
 
+# an incomplete config dir (e.g. created by starting gephex-engine-real
+# directly) would leave GePhex without module and graph paths
+if [ ! -e $CONF_DIR/gephex.conf ]; then
+    echo "$CONF_DIR/gephex.conf does not exist, creating default one..."
+    mkdir -p $CONF_DIR/graphs
+    cat $DATA_PATH/gephex.conf.default | sed s:__CONF_DIR__:$CONF_DIR:g | sed s:__HOME_DIR__:$HOME_DIR:g > $CONF_DIR/gephex.conf
+
+    if [ -z "`ls -A $CONF_DIR/graphs`" ]; then
+        echo "Copying example graphs..."
+        GRAPHS="example1 example2 example3 noise fzcam4 kaleidoskop"
+        for i in $GRAPHS; do cp $DATA_PATH/graphs/$i $CONF_DIR/graphs; done
+    fi
+    echo "...done!"
+fi
+
 if [ ! -e $CONF_DIR/run_in_terminal.sh ]; then
     echo "$CONF_DIR/run_in_terminal.sh does not exist, copying default one..."
     cp $DATA_PATH/run_in_terminal.sh $CONF_DIR/
