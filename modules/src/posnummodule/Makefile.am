@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python @srcdir@/../../pluc.py
+PLUC=python3 @srcdir@/../../pluc.py
 
 posnummodule_auto.c: posnummodule.spec posnummodule.h
 	$(PLUC) c @srcdir@/posnummodule.spec

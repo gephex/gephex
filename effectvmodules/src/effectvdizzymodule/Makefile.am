@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python @top_srcdir@/modules/pluc.py
+PLUC=python3 @top_srcdir@/modules/pluc.py
 
 effectvdizzymodule_auto.c: effectvdizzymodule.spec effectvdizzymodule.h
 	$(PLUC) c @srcdir@/effectvdizzymodule.spec

@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python @srcdir@/../../pluc.py
+PLUC=python3 @srcdir@/../../pluc.py
 
 numposmodule_auto.c: numposmodule.spec numposmodule.h
 	$(PLUC) c @srcdir@/numposmodule.spec

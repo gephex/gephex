@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python @top_srcdir@/modules/pluc.py
+PLUC=python3 @top_srcdir@/modules/pluc.py
 
 effectvchameleonmodule_auto.c: effectvchameleonmodule.spec effectvchameleonmodule.h
 	$(PLUC) c @srcdir@/effectvchameleonmodule.spec

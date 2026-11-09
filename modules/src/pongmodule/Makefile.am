@@ -1,6 +1,6 @@
 libdir = @libdir@/gephex-0.4/modules
 
-PLUC=python @top_srcdir@/modules/pluc.py
+PLUC=python3 @top_srcdir@/modules/pluc.py
 
 pongmodule_auto.c: pongmodule.spec pongmodule.h
 	$(PLUC) c @srcdir@/pongmodule.spec

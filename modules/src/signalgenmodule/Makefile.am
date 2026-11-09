@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python @srcdir@/../../pluc.py
+PLUC=python3 @srcdir@/../../pluc.py
 
 signalgenmodule_auto.c: signalgenmodule.spec signalgenmodule.h
 	$(PLUC) c @srcdir@/signalgenmodule.spec

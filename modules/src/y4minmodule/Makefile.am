@@ -1,6 +1,6 @@
 libdir = @libdir@/gephex-0.4/modules
 
-PLUC=python @top_srcdir@/modules/pluc.py
+PLUC=python3 @top_srcdir@/modules/pluc.py
 
 y4minmodule_auto.c: y4minmodule.spec y4minmodule.h
 	$(PLUC) c @srcdir@/y4minmodule.spec

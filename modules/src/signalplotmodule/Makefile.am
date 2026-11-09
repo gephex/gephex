@@ -1,6 +1,6 @@
 libdir = @libdir@/gephex-0.4/modules
 
-PLUC=python @top_srcdir@/modules/pluc.py
+PLUC=python3 @top_srcdir@/modules/pluc.py
 
 signalplotmodule_auto.c: signalplotmodule.spec signalplotmodule.h
 	$(PLUC) c @srcdir@/signalplotmodule.spec

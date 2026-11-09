@@ -39,9 +39,9 @@ noinst_HEADERS = \
 	itype.h
 
 i%receiver.h: %.if
-	python @srcdir@/../../nic.py ir . $<
+	python3 @srcdir@/../../nic.py ir . $<
 
 i%sender.h: %.if
-	python @srcdir@/../../nic.py is . $<
+	python3 @srcdir@/../../nic.py is . $<
 
 DISTCLEANFILES = $(GENERATED_H)

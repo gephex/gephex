@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python @srcdir@/../../pluc.py
+PLUC=python3 @srcdir@/../../pluc.py
 
 plasmamodule_auto.c: plasmamodule.spec plasmamodule.h
 	$(PLUC) c @srcdir@/plasmamodule.spec

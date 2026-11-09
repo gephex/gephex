@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python $(top_srcdir)/modules/pluc.py
+PLUC=python3 $(top_srcdir)/modules/pluc.py
 
 diffmodule_auto.c: diffmodule.spec diffmodule.h
 	$(PLUC) c $(srcdir)/diffmodule.spec

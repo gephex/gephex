@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python @srcdir@/../../pluc.py
+PLUC=python3 @srcdir@/../../pluc.py
 
 netcontrolmodule_auto.c: netcontrolmodule.spec netcontrolmodule.h
 	$(PLUC) c @srcdir@/netcontrolmodule.spec

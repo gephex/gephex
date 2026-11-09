@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python @top_srcdir@/modules/pluc.py
+PLUC=python3 @top_srcdir@/modules/pluc.py
 
 centermodule_auto.c: centermodule.spec centermodule.h
 	$(PLUC) c @srcdir@/centermodule.spec

@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python @top_srcdir@/modules/pluc.py
+PLUC=python3 @top_srcdir@/modules/pluc.py
 
 audioaddmodule_auto.c: audioaddmodule.spec audioaddmodule.h
 	$(PLUC) c @srcdir@/audioaddmodule.spec

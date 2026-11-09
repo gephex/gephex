@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python $(top_srcdir)/modules/pluc.py
+PLUC=python3 $(top_srcdir)/modules/pluc.py
 
 effectvpuzzlemodule_auto.c: effectvpuzzlemodule.spec effectvpuzzlemodule.h
 	$(PLUC) c $(srcdir)/effectvpuzzlemodule.spec

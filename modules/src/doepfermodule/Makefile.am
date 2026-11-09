@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python @srcdir@/../../pluc.py
+PLUC=python3 @srcdir@/../../pluc.py
 
 doepfermodule_auto.c: doepfermodule.spec doepfermodule.h
 	$(PLUC) c @srcdir@/doepfermodule.spec

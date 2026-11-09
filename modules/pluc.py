@@ -1,8 +1,17 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 #TODO:
 #      die ganzen checks
 
-import re, sys, string, os
+import re, sys, os
+
+# Python 3 compatibility: this generator was written for Python 2.
+import types
+from functools import reduce
+_builtin_map, _builtin_filter = map, filter
+def map(f, *seqs): return list(_builtin_map(f, *seqs))
+def filter(f, seq): return list(_builtin_filter(f, seq))
+string = types.SimpleNamespace(lower=str.lower, upper=str.upper, strip=str.strip,
+                               replace=str.replace, find=str.find, rfind=str.rfind)
 
 #
 # regular expressions for scanning:
@@ -80,7 +89,7 @@ def readBlock(file):
                         continue;
                 else:
                         sys.stderr.write("Error: " + line + " at line " \
-                                         + `1` + "\n");
+                                         + str(1) + "\n");
                         
         if matchedEndBlock == 0:
               sys.stderr.write("Error: missing }\n");
@@ -139,7 +148,7 @@ def checkMapForKeys(map,keys):
         if len(keys) == 0:
                 return ""
         else:
-           if not map.has_key(keys[0]):
+           if not (keys[0] in map):
                 return keys[0]
            else:
                 return checkMapForKeys(map,keys[1:])
@@ -198,25 +207,25 @@ def usesAttributesFeature(inputs):
         if inputs == []:
                 return 0
         
-        list = map(lambda x: x[1].has_key('attributes'), inputs)        
+        list = map(lambda x: ('attributes' in x[1]), inputs)        
         uses = reduce(lambda x, y: x or y, list)
         
         return uses
 
 def usesPatchFeature(options):
-        return options.has_key('enablePatching') and options['enablePatching'] == 'true'
+        return ('enablePatching' in options) and options['enablePatching'] == 'true'
                 
 
 
 def createModuleSpec(id, options, numberOfInputs, numberOfOutputs):
         return "mod_spec { " + "name=[" + id \
-                + "] number_of_inputs=[" +  `numberOfInputs`  \
-                + "] number_of_outputs=[" + `numberOfOutputs` \
+                + "] number_of_inputs=[" +  str(numberOfInputs)  \
+                + "] number_of_outputs=[" + str(numberOfOutputs) \
                 + "] deterministic=[" + options['deterministic'] + "] }"
 
 def createInputSpec(input):
         (id,options) = input
-        if options.has_key('default'):
+        if ('default' in options):
                 default = 'default=['+options['default']+']'
         else:
                 default = ''
@@ -292,7 +301,7 @@ def createEnums(inputs, outputs):
                    prelog = "enum Inputs { "
                    numbers = range(0,len(inputs))
                    names = map(getInputVarName,inputs)
-                   enumList = map(lambda a, b: a + ' = ' + `b`,names, numbers)
+                   enumList = map(lambda a, b: a + ' = ' + str(b),names, numbers)
                    enumContent = reduce(lambda a, b: a + ', ' + b ,enumList)
                    inputEnum = prelog + enumContent + ' };\n'
                                   
@@ -303,7 +312,7 @@ def createEnums(inputs, outputs):
                    prelog = "enum Outputs { "
                    numbers = range(0,len(outputs))
                    names = map(getOutputVarName,outputs)
-                   enumList = map(lambda a, b: a + ' = ' + `b`,names, numbers)
+                   enumList = map(lambda a, b: a + ' = ' + str(b),names, numbers)
                    enumContent = reduce(lambda a, b: a + ', ' +  b ,enumList)
                    outputEnum = prelog + enumContent + ' };\n'
                                   
@@ -320,7 +329,7 @@ def putInDict(dict, x):
 def make_unique(list):
         dict = {}
         map(lambda x, d=dict: putInDict(d,x), list)
-        return dict.keys()
+        return sorted(dict.keys())
 
 def createUsedTypes(inputs, outputs):
         typelist = make_unique(map(lambda x: x[1]['type'],inputs+outputs))
@@ -368,7 +377,7 @@ def createSetInput(inputs):
         caseList = []
         for i in range(0,len(inputs)):
                 input = inputs[i]
-                caseList.append("  case " + `i` + ":\n   inst->" + \
+                caseList.append("  case " + str(i) + ":\n   inst->" + \
                                 getInputVarName(input) + \
                                 ' = (' + getTypeName(input[1]['type']) + \
                                 ' *) typePointer;\n  break;\n')
@@ -391,7 +400,7 @@ def createSetOutput(outputs):
         caseList = []
         for i in range(0,len(outputs)):
                 output = outputs[i]
-                caseList.append("  case " + `i` + ":\n   inst->" + \
+                caseList.append("  case " + str(i) + ":\n   inst->" + \
                                 getOutputVarName(output) + \
                                 ' = (' + getTypeName(output[1]['type']) \
                                 + '* ) typePointer;\n  break;\n')
@@ -412,7 +421,7 @@ def createSpecFunctions(module_spec, input_specs, output_specs):
 
         caseList = []
         for i in range(0,len(input_specs)):
-                caseList.append("  case " + `i` + ':\n    return "' + \
+                caseList.append("  case " + str(i) + ':\n    return "' + \
                                 input_specs[i] + '";\n  break;\n')
 
         if caseList != []:
@@ -426,7 +435,7 @@ def createSpecFunctions(module_spec, input_specs, output_specs):
                           + ' switch(index) {\n '
         caseList = []
         for i in range(0,len(output_specs)):
-                caseList.append("  case " + `i` + ':\n    return "' + \
+                caseList.append("  case " + str(i) + ':\n    return "' + \
                                 output_specs[i] + '";\n  break;\n')
 
         if caseList != []:
@@ -475,14 +484,14 @@ def createInputInfoArray(inputs):
                 return '0'
         else:
                 entries = reduce(lambda x, y: x + y,map(inputToInfo,inputs))
-                return `len(inputs)` + ' ' + entries
+                return str(len(inputs)) + ' ' + entries
 
 def createOutputInfoArray(outputs):
         if len(outputs) == 0:
                 return '0'
         else:
                 entries = reduce(lambda x, y: x + y,map(outputToInfo,outputs))
-                return `len(outputs)` + ' ' + entries
+                return str(len(outputs)) + ' ' + entries
 
 
 def createGetInfo(options,inputs,outputs):
@@ -636,7 +645,7 @@ X_INI_LIST_X
 
         iniList = reduce(lambda x,y: x + y, list)
         return string.replace(string.replace(template,'X_NUMINS_X',
-                                             `len(inputs)`),
+                                             str(len(inputs))),
                               'X_INI_LIST_X',iniList)
 
 def createPatchFunc(outputs):
@@ -660,7 +669,7 @@ X_INI_LIST_X
 
         iniList = reduce(lambda x,y: x + y, list)
         return string.replace(string.replace(template,'X_NUMOUTS_X',
-                                             `len(outputs)`),
+                                             str(len(outputs))),
                               'X_INI_LIST_X',iniList)
 
 
@@ -675,9 +684,9 @@ def createAttribDecls(inputs):
 
         decls = []
         for i in range(0,len(inputs)):          
-                if inputs[i][1].has_key('attributes'):
+                if ('attributes' in inputs[i][1]):
                         decls.append('static ' + typeName2AttributeStruct(inputs[i][1]['type'])\
-                                                 + ' attr' + `i` + ';\n')
+                                                 + ' attr' + str(i) + ';\n')
 
         return reduce(lambda x, y: x + y, decls)
 
@@ -694,9 +703,9 @@ def createAttribBlocks(inputs):
         
         code = []
         for i in range(0,len(inputs)):
-                if inputs[i][1].has_key('attributes'):
-                        code.append(createAttribBlock(inputs[i][1]['attributes'], 'attr' + `i`))
-                        code.append('\tattributes[' + `i` + '] = &attr' + `i` + ';'); 
+                if ('attributes' in inputs[i][1]):
+                        code.append(createAttribBlock(inputs[i][1]['attributes'], 'attr' + str(i)))
+                        code.append('\tattributes[' + str(i) + '] = &attr' + str(i) + ';'); 
                 else:
                         code.append('')
 
@@ -788,7 +797,7 @@ void* getInputAttributes(int index)
                 decls = createAttribDecls(inputs)
                 blocks = createAttribBlocks(inputs)
                 attributesCode__ = \
-                        string.replace(fixedAttributesTemplate,'XXX_NUMINPUTS_XXX',`len(inputs)`)
+                        string.replace(fixedAttributesTemplate,'XXX_NUMINPUTS_XXX',str(len(inputs)))
                 attributesCode_ =  \
                         string.replace(attributesCode__,'XXX_BLOCKS_XXX',blocks)
                 attributesCode = \
@@ -911,7 +920,7 @@ void update(void* instance)
 def createAMFile(file, fileprefix, inputs, outputs):
         template = """libdir = @libdir@/gephex-0.4/modules
 
-PLUC=python @top_srcdir@/modules/pluc.py
+PLUC=python3 @top_srcdir@/modules/pluc.py
 
 XXX_NAME_XXX_auto.c: XXX_NAME_XXX.spec XXX_NAME_XXX.h
 	$(PLUC) c @srcdir@/XXX_NAME_XXX.spec
@@ -1239,7 +1248,7 @@ if not cmd in ['c','h','skel','am','def','dsp']:
         sys.exit(-1)
 
 try:
-        specFile = open(specfileName,'r')
+        specFile = open(specfileName,'r',encoding='latin-1')
 except IOError:
         sys.stderr.write('Error, couldnt open ' + specfileName + '\n')
         sys.exit(-1)
@@ -1256,14 +1265,14 @@ fileprefix = removeExtension(filename_ext)
 
 if cmd == 'c':
         filename = fileprefix + '_auto.c'
-        file = open(filename,'w')
-        print "Writing cfile to " + filename
+        file = open(filename,'w',encoding='latin-1')
+        print("Writing cfile to " + filename)
         createCFile(id,options,inputs,outputs,file,fileprefix)
         file.close()
 elif cmd == 'h':
         filename = fileprefix + '.h'
-        file = open(filename,'w')
-        print "Writing header to " + filename
+        file = open(filename,'w',encoding='latin-1')
+        print("Writing header to " + filename)
         createHFile(inputs,outputs,file, filename)
         file.close()
 elif cmd == 'skel':
@@ -1271,26 +1280,26 @@ elif cmd == 'skel':
         if os.access(filename,os.F_OK):
                 sys.stderr.write(filename + ' already exists! aborting.\n')
                 sys.exit(-1)
-        file = open(filename,'w')
-        print "Writing skel to " + filename
+        file = open(filename,'w',encoding='latin-1')
+        print("Writing skel to " + filename)
         createSkelFile(file, fileprefix,inputs)
         file.close()
 elif cmd == 'am':
         filename = 'Makefile.am'
-        file = open(filename,'w')
-        print "Writing  Makefile to  " + filename
+        file = open(filename,'w',encoding='latin-1')
+        print("Writing  Makefile to  " + filename)
         createAMFile(file, fileprefix, inputs, outputs)
         file.close()
 elif cmd == 'def':
         filename = fileprefix + '.def'  
-        file = open(filename,'w')
-        print "Writing def file to  " + filename
+        file = open(filename,'w',encoding='latin-1')
+        print("Writing def file to  " + filename)
         createDefFile(file, fileprefix,inputs,options)
         file.close()
 elif cmd == 'dsp':
         filename = fileprefix + '.dsp'
-        file = open(filename,'w')
-        print "Writing dsp file to  " + filename
+        file = open(filename,'w',encoding='latin-1')
+        print("Writing dsp file to  " + filename)
         createDspFile(file, fileprefix)
         file.close()
         

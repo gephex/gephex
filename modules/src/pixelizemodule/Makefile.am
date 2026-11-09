@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python @top_srcdir@/modules/pluc.py
+PLUC=python3 @top_srcdir@/modules/pluc.py
 
 pixelizemodule_auto.c: pixelizemodule.spec pixelizemodule.h
 	$(PLUC) c @srcdir@/pixelizemodule.spec

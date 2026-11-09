@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python @srcdir@/../../pluc.py
+PLUC=python3 @srcdir@/../../pluc.py
 
 midiinmodule_auto.c: midiinmodule.spec midiinmodule.h
 	$(PLUC) c @srcdir@/midiinmodule.spec

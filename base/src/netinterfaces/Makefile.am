@@ -63,16 +63,16 @@ noinst_HEADERS = \
 
 
 %receivernet.h: ../interfaces/%.if
-	python @srcdir@/../../nic.py nrh . $<
+	python3 @srcdir@/../../nic.py nrh . $<
 
 %receivernet.cpp: ../interfaces/%.if %receivernet.h
-	python @srcdir@/../../nic.py nrc . $<
+	python3 @srcdir@/../../nic.py nrc . $<
 
 %sendernet.h: ../interfaces/%.if
-	python @srcdir@/../../nic.py nsh . $<
+	python3 @srcdir@/../../nic.py nsh . $<
 
 %sendernet.cpp: ../interfaces/%.if %sendernet.h
-	python @srcdir@/../../nic.py nsc . $<
+	python3 @srcdir@/../../nic.py nsc . $<
 
 DISTCLEANFILES = *sendernet.cpp *sendernet.h *receivernet.cpp *receivernet.h
 

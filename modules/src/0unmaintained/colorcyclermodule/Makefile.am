@@ -1,9 +1,9 @@
 libdir = @gphx_module_lib_dir@
 colorcyclermodule_auto.c: colorcyclermodule.spec colorcyclermodule.h
-	python ../../pluc.py c colorcyclermodule.spec
+	python3 ../../pluc.py c colorcyclermodule.spec
 
 colorcyclermodule.h: colorcyclermodule.spec
-	python ../../pluc.py h colorcyclermodule.spec
+	python3 ../../pluc.py h colorcyclermodule.spec
 
 lib_LTLIBRARIES = colorcyclermodule.la
 colorcyclermodule_la_SOURCES = colorcyclermodule_auto.c colorcyclermodule.c colorcyclermodule.h colorcyclermodule.spec colorcyclermodule.xpm

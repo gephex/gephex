@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python @srcdir@/../../pluc.py
+PLUC=python3 @srcdir@/../../pluc.py
 
 joystickmodule_auto.c: joystickmodule.spec joystickmodule.h
 	$(PLUC) c @srcdir@/joystickmodule.spec

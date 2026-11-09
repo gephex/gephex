@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python @top_srcdir@/modules/pluc.py
+PLUC=python3 @top_srcdir@/modules/pluc.py
 
 effectvpredatormodule_auto.c: effectvpredatormodule.spec effectvpredatormodule.h
 	$(PLUC) c @srcdir@/effectvpredatormodule.spec

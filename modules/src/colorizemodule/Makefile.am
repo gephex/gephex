@@ -1,6 +1,6 @@
 libdir = @libdir@/gephex-0.4/modules
 
-PLUC=python @top_srcdir@/modules/pluc.py
+PLUC=python3 @top_srcdir@/modules/pluc.py
 
 colorizemodule_auto.c: colorizemodule.spec colorizemodule.h
 	$(PLUC) c @srcdir@/colorizemodule.spec

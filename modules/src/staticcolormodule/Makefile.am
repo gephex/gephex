@@ -1,6 +1,6 @@
 bindir = @gphx_module_lib_dir@
 
-PLUC=python @srcdir@/../../pluc.py
+PLUC=python3 @srcdir@/../../pluc.py
 
 staticcolormodule_auto.c: staticcolormodule.spec staticcolormodule.h
 	$(PLUC) c @srcdir@/staticcolormodule.spec

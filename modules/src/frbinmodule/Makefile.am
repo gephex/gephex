@@ -1,6 +1,6 @@
 bindir = @gphx_module_lib_dir@
 
-PLUC=python @srcdir@/../../pluc.py
+PLUC=python3 @srcdir@/../../pluc.py
 
 frbinmodule_auto.c: frbinmodule.spec frbinmodule.h
 	$(PLUC) c @srcdir@/frbinmodule.spec

@@ -1,6 +1,6 @@
 bindir = @gphx_module_lib_dir@
 
-PLUC=python @srcdir@/../../pluc.py
+PLUC=python3 @srcdir@/../../pluc.py
 
 tunnelmodule_auto.c: tunnelmodule.spec tunnelmodule.h
 	$(PLUC) c @srcdir@/tunnelmodule.spec

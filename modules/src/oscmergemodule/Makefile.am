@@ -1,6 +1,6 @@
 libdir = @libdir@/gephex-0.4/modules
 
-PLUC=python @top_srcdir@/modules/pluc.py
+PLUC=python3 @top_srcdir@/modules/pluc.py
 
 oscmergemodule_auto.c: oscmergemodule.spec oscmergemodule.h
 	$(PLUC) c @srcdir@/oscmergemodule.spec

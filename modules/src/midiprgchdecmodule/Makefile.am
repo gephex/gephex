@@ -1,6 +1,6 @@
 libdir = @libdir@/gephex-0.4/modules
 
-PLUC=python @top_srcdir@/modules/pluc.py
+PLUC=python3 @top_srcdir@/modules/pluc.py
 
 midiprgchdecmodule_auto.c: midiprgchdecmodule.spec midiprgchdecmodule.h
 	$(PLUC) c @srcdir@/midiprgchdecmodule.spec

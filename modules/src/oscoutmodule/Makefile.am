@@ -1,6 +1,6 @@
 libdir = @libdir@/gephex-0.4/modules
 
-PLUC=python @top_srcdir@/modules/pluc.py
+PLUC=python3 @top_srcdir@/modules/pluc.py
 
 oscoutmodule_auto.c: oscoutmodule.spec oscoutmodule.h
 	$(PLUC) c @srcdir@/oscoutmodule.spec

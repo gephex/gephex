@@ -1,6 +1,6 @@
 libdir = @gphx_module_lib_dir@
 
-PLUC=python @top_srcdir@/modules/pluc.py
+PLUC=python3 @top_srcdir@/modules/pluc.py
 
 effectvburnmodule_auto.c: effectvburnmodule.spec effectvburnmodule.h
 	$(PLUC) c @srcdir@/effectvburnmodule.spec

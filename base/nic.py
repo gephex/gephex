@@ -1,6 +1,15 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 #TODO: in der receiver implementierung reicht es wohl, buffer forward zu dekl.
-import string, sys, os
+import sys, os
+
+# Python 3 compatibility: this generator was written for Python 2.
+import types
+from functools import reduce
+_builtin_map, _builtin_filter = map, filter
+def map(f, *seqs): return list(_builtin_map(f, *seqs))
+def filter(f, seq): return list(_builtin_filter(f, seq))
+string = types.SimpleNamespace(lower=str.lower, upper=str.upper, strip=str.strip,
+                               replace=str.replace, find=str.find, rfind=str.rfind)
 
 def startsWith(s, pattern):
 	return string.find(s,pattern) == 0
@@ -259,8 +268,7 @@ private:
 
 def createCommandName(methodNames):
 
-	print commandNames
-
+	print(commandNames)
 def stringShit(pair):
 	(type, var) = pair;
 	if type == 'string':
@@ -274,7 +282,7 @@ def createRecMethodBody(signature):
 	(methodName,argList,commandName) = signature
 
 	if len(argList) > 0:
-		maxLengthHint = `len(argList)*16`
+		maxLengthHint = str(len(argList)*16)
 		pre = '\tutils::Buffer temp_buf_(' + maxLengthHint + ');\n' \
 		      '\tutils::OBufferStream bs(temp_buf_);\n'
 	else:
@@ -299,7 +307,7 @@ def expand24Digits(str):
 	return '0000'[len(str):] + str
 
 def number24string(i):
-	istr = `i`
+	istr = str(i)
 	return expand24Digits(istr)
 	
 def insertCommandNames(methodDefs):		
@@ -446,7 +454,7 @@ if not cmd in ['ir','is','nrh','nrc','nsh','nsc','iam','nam']:
 	sys.exit(-1)
 
 
-file = open(interfaceFilename,"r")
+file = open(interfaceFilename,'r',encoding='latin-1')
 (header,comment,interface) = readInterface(file)
 baseName = header['name']
 
@@ -462,43 +470,43 @@ baseName = header['name']
 if cmd == 'ir':
 	filename = os.path.join(path,
 				'i' + string.lower(baseName) + 'receiver.h')
-	file = open(filename,'w')
-	print "Writing interface receiver file to " + filename
+	file = open(filename,'w',encoding='latin-1')
+	print("Writing interface receiver file to " + filename)
 	createIfaceRecHeader(file,baseName,comment,interface)
 	file.close()
 elif cmd == 'is':
 	filename = os.path.join(path,
 				'i' + string.lower(baseName) + 'sender.h')
-	file = open(filename,'w')
-	print "Writing interface receiver file to " + filename
+	file = open(filename,'w',encoding='latin-1')
+	print("Writing interface receiver file to " + filename)
 	createIfaceSendHeader(file,baseName)
 	file.close()
 elif cmd == 'nrh':
 	filename = os.path.join(path,
 				string.lower(baseName) + 'receivernet.h')
-	file = open(filename,'w')
-	print "Writing net interface receiver header file to " + filename
+	file = open(filename,'w',encoding='latin-1')
+	print("Writing net interface receiver header file to " + filename)
 	createNetIfaceRecHeader(file,baseName,interface)
 	file.close()
 elif cmd == 'nsh':
 	filename = os.path.join(path,
 				string.lower(baseName) + 'sendernet.h')
-	file = open(filename,'w')
-	print "Writing net interface sender header file to " + filename
+	file = open(filename,'w',encoding='latin-1')
+	print("Writing net interface sender header file to " + filename)
 	createNetIfaceSendHeader(file,baseName)
 	file.close()
 elif cmd == 'nrc':
 	filename = os.path.join(path,
 				string.lower(baseName) + 'receivernet.cpp')
-	file = open(filename,'w')
-	print "Writing net interface receiver c++ file to " + filename
+	file = open(filename,'w',encoding='latin-1')
+	print("Writing net interface receiver c++ file to " + filename)
 	createNetIfaceRecImpl(file,baseName,interface)
 	file.close()
 elif cmd == 'nsc':
 	filename = os.path.join(path,
 				string.lower(baseName) + 'sendernet.cpp')
-	file = open(filename,'w')
-	print "Writing net interface sender c++ file to " + filename
+	file = open(filename,'w',encoding='latin-1')
+	print("Writing net interface sender c++ file to " + filename)
 	createNetIfaceSendImpl(file,baseName,interface)
 	file.close()
 elif cmd == 'iam':
@@ -507,8 +515,8 @@ elif cmd == 'iam':
 		   'iX_NAME_Xsender.h: X_NAME_X.if\n' \
 		   '\tpython $(top_builddir)/nic.py is . X_NAME_X.if\n'
 
-	print 'Appending build rules to Makefile.am...'
-	file = open('Makefile.am','a')
+	print('Appending build rules to Makefile.am...')
+	file = open('Makefile.am','a',encoding='latin-1')
 	file.write(string.replace(template,'X_NAME_X',
 				  string.lower(baseName)))
 
@@ -527,8 +535,8 @@ X_NAME_Xsendernet.h: ../interfaces/X_NAME_X.if
 X_NAME_Xsendernet.cpp: ../interfaces/X_NAME_X.if X_NAME_Xsendernet.h
 	python $(top_builddir)/nic.py nsc . ../interfaces/X_NAME_X.if"""
 
-	print 'Appending build rules to Makefile.am...'
-	file = open('Makefile.am','a')
+	print('Appending build rules to Makefile.am...')
+	file = open('Makefile.am','a',encoding='latin-1')
 	file.write(string.replace(template,'X_NAME_X',
 				  string.lower(baseName)))
 
