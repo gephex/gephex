@@ -81,7 +81,7 @@ public:
   {
 	  std::string ret;
 	  ret = s;
-	  std::transform(ret.begin(),ret.end(), ret.begin(), tolower);
+	  std::transform(ret.begin(),ret.end(), ret.begin(), ::tolower);
 
 	  return ret;
   }
