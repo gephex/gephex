@@ -29,10 +29,10 @@
 #include <cassert>
 #include <cctype> //tolower
 
-#include <QtGui/qlayout.h>
-#include <QtGui/QPushButton>
-#include <QtGui/qfiledialog.h>
-#include <QtGui/qmessagebox.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/qfiledialog.h>
+#include <QtWidgets/qmessagebox.h>
 
 #include "utils/structreader.h"
 #include "utils/stringtokenizer.h"

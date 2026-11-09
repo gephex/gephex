@@ -24,8 +24,8 @@
 #define ASKFORSTRINGDIALOG_H
 
 #include <string>
-//#include <QtGui/qvariant.h>
-#include <QtGui/qdialog.h>
+//#include <QtCore/qvariant.h>
+#include <QtWidgets/qdialog.h>
 
 class QLabel;
 class QLineEdit;

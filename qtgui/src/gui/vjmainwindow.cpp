@@ -22,17 +22,19 @@
 
 #include "vjmainwindow.h"
 
+#include <QtCore/QCoreApplication>
+
 #include <sstream>
 #include <iostream>
 
 #include <QtCore/QSettings>
-#include <QtGui/qmenubar.h>
-#include <QtGui/qlayout.h>
-#include <QtGui/qtabwidget.h>
-#include <QtGui/qstatusbar.h>
-#include <QtGui/qsplitter.h>
+#include <QtWidgets/qmenubar.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qtabwidget.h>
+#include <QtWidgets/qstatusbar.h>
+#include <QtWidgets/qsplitter.h>
 #include <QtCore/qtimer.h>
-#include <QtGui/QDockWidget>
+#include <QtWidgets/QDockWidget>
 #include <QtGui/QCloseEvent>
 
 #include "base/propertyview.h"
@@ -138,8 +140,8 @@ namespace gui
     buildMenuBar();
     
     switcher = new PicSwitch(statusBar(),
-                             roter_mann,
-			     gruener_mann);
+                             QPixmap(roter_mann),
+			     QPixmap(gruener_mann));
 
     statusBar()->addPermanentWidget(switcher);
     

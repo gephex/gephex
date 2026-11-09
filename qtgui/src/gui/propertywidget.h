@@ -26,8 +26,8 @@
 #include <string>
 #include <map>
 
-//#include <QtGui/qframe.h>
-#include <QtGui/qwidget.h>
+//#include <QtWidgets/qframe.h>
+#include <QtWidgets/qwidget.h>
 
 #include "interfaces/icontrolvaluereceiver.h"
 #include "utils/buffer.h"
@@ -45,7 +45,7 @@ namespace gui
     Q_OBJECT
   public:
     typedef std::map<std::string,std::string> ParamMap;
-    PropertyWidget(QWidget* parent, Qt::WFlags fl,
+    PropertyWidget(QWidget* parent, Qt::WindowFlags fl,
 		   int nodeID,int inIndex, int controlID,
 		   IModelControlReceiver&,
 		   const ParamMap& params,

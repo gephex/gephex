@@ -27,7 +27,7 @@
 #include <string>
 #include <list>
 
-#include <QtGui/qwidget.h>
+#include <QtWidgets/qwidget.h>
 #include <QtGui/qpixmap.h>
 
 #include "utils/autoptr.h"
@@ -107,7 +107,7 @@ namespace gui
     void error(const std::string& errorText);
 
   public:
-    NodeWidget(QWidget* parent, Qt::WFlags fl,
+    NodeWidget(QWidget* parent, Qt::WindowFlags fl,
 	       int id,const ModuleInfo& _info, 
 	       const PicManager& picz,
                const utils::AutoPtr<ControlValueDispatcher>&,

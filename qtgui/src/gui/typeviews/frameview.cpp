@@ -25,8 +25,8 @@
 
 #include <QtGui/QPixmap>
 #include <QtGui/QImage>
-#include <QtGui/QLabel>
-#include <QtGui/QBoxLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QBoxLayout>
 
 namespace gui
 {

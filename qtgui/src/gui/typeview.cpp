@@ -24,8 +24,8 @@
 
 #include <iostream>
 
-#include <QtGui/qwidget.h>
-#include <QtGui/QHBoxLayout>
+#include <QtWidgets/qwidget.h>
+#include <QtWidgets/QHBoxLayout>
 
 namespace gui 
 {

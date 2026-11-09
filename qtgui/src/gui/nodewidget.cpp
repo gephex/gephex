@@ -25,8 +25,8 @@
 #include <iostream>
 #include <cassert>
 
-#include <QtGui/qlabel.h>
-#include <QtGui/qlayout.h>
+#include <QtWidgets/qlabel.h>
+#include <QtWidgets/qlayout.h>
 #include <QtGui/qpainter.h>
 #include <QtGui/QMouseEvent>
 
@@ -207,7 +207,7 @@ namespace gui
 
 
   NodeWidget::NodeWidget(QWidget* parent,
-			 Qt::WFlags fl,int _id,const ModuleInfo& _info,
+			 Qt::WindowFlags fl,int _id,const ModuleInfo& _info,
 			 const PicManager& picz,
 			 const utils::AutoPtr<ControlValueDispatcher>& dispatcher, 
 			 IModelControlReceiver& mcr,

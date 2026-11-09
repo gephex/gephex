@@ -27,8 +27,8 @@
 #include <iostream>
 
 #include <QtGui/qvalidator.h>
-#include <QtGui/qlineedit.h>
-#include <QtGui/QHBoxLayout>
+#include <QtWidgets/qlineedit.h>
+#include <QtWidgets/QHBoxLayout>
 
 #include <utils/structreader.h>
 #include <utils/buffer.h>

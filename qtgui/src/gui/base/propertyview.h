@@ -24,7 +24,7 @@
 #define INCLUDED_PROPERTY_VIEW_H
 
 #include <list>
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 
 
 class QTableWidget;

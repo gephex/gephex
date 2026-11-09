@@ -147,7 +147,7 @@ AM_PATH_DX([8.0], have_dx=yes, have_dx=no)
 AM_CONDITIONAL(HAVE_DX, test "x$have_dx" = "xyes")
 
 # qt
-AM_PATH_QT([4.1.0], $QTLIBEXT, have_qt=yes, have_qt=no)
+AM_PATH_QT([5.0.0], $QTLIBEXT, have_qt=yes, have_qt=no)
 AM_CONDITIONAL(HAVE_QT, test "x$have_qt" = "xyes")
 
 # Checks for libraries.

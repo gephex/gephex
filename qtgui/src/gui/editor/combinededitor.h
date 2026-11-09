@@ -24,7 +24,7 @@
 #define INCLUDED_COMBINED_EDITOR_H
 
 #include <map>
-#include <QtGui/qwidget.h>
+#include <QtWidgets/qwidget.h>
 
 #include "ieditor.h"
 

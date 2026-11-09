@@ -25,7 +25,7 @@
 
 #include <string>
 
-#include <QtGui/qwidget.h>
+#include <QtWidgets/qwidget.h>
 #include <QtGui/qpixmap.h>
 
 namespace gui

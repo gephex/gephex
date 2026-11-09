@@ -28,7 +28,7 @@
 #include <vector>
 #include <stdexcept>
 
-#include <QtGui/qcombobox.h>
+#include <QtWidgets/qcombobox.h>
 
 #include "guimodel/moduleinfo.h"
 #include "guimodel/xpm.h"

@@ -28,7 +28,7 @@
 #include <stdexcept>
 #include <memory>
 
-#include <QtGui/qmainwindow.h>
+#include <QtWidgets/qmainwindow.h>
 
 #include "interfaces/irendererstatusreceiver.h"
 

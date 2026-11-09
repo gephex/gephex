@@ -25,7 +25,7 @@
 #include <list>
 #include <map>
 
-#include <QtGui/qwidget.h>
+#include <QtWidgets/qwidget.h>
 #include <QtGui/QKeyEvent>
 
 #include "ikeylistener.h"

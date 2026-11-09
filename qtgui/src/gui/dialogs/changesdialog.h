@@ -30,8 +30,8 @@ class ChangesDialog : public QDialog,
 { 
 public:
     ChangesDialog( QWidget* parent = 0,
-		   bool modal = FALSE,
-		   Qt::WFlags fl = 0 );
+		   bool modal = false,
+		   Qt::WindowFlags fl = 0 );
 
 };
 

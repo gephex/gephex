@@ -31,7 +31,7 @@
  */
 ChangesDialog::ChangesDialog( QWidget* parent,
 			      bool modal,
-			      Qt::WFlags fl )
+			      Qt::WindowFlags fl )
     : QDialog( parent, fl )
 {
   setModal(modal);

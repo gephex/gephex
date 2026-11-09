@@ -29,8 +29,8 @@
 #include <vector>
 #include <algorithm>
 
-#include <QtGui/qmenu.h>
-#include <QtGui/qmessagebox.h>
+#include <QtWidgets/qmenu.h>
+#include <QtWidgets/qmessagebox.h>
 
 #include "interfaces/imodelcontrolreceiver.h"
 #include "interfaces/ierrorreceiver.h"

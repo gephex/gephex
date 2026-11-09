@@ -26,9 +26,9 @@
 #include <cmath>
 #include <cassert>
 
-#include <QtGui/QSlider>
-#include <QtGui/QDial>
-#include <QtGui/QBoxLayout>
+#include <QtWidgets/QSlider>
+#include <QtWidgets/QDial>
+#include <QtWidgets/QBoxLayout>
 
 #include "utils/buffer.h"
 #include "utils/structreader.h"

@@ -30,8 +30,8 @@ class AboutDialog : public QDialog,
 {
 public:
   AboutDialog( QWidget* parent = 0,
-	       bool modal = FALSE,
-	       Qt::WFlags fl = 0 );
+	       bool modal = false,
+	       Qt::WindowFlags fl = 0 );
 };
 
 #endif

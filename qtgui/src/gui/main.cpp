@@ -27,8 +27,8 @@
 #include "config.h"
 #endif
 
-#include <QtGui/QApplication>
-#include <QtGui/QMessageBox>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMessageBox>
 #include <QtGui/QPixmap>
 #include <QtGui/QIcon>
 

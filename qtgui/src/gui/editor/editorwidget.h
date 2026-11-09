@@ -24,10 +24,10 @@
 #define EDITORWIDGET_H
 
 #include <string>
-#include <QtGui/qwidget.h>
-//#include <QtGui/qworkspace.h>
-//#include <QtGui/qtabwidget.h>
-#include <QtGui/qsplitter.h>
+#include <QtWidgets/qwidget.h>
+//#include <QtWidgets/qworkspace.h>
+//#include <QtWidgets/qtabwidget.h>
+#include <QtWidgets/qsplitter.h>
 
 //class QWidget;
 

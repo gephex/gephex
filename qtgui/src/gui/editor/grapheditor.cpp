@@ -27,15 +27,15 @@
 #include <cassert>
 
 #include <QtGui/QPainter>
-#include <QtGui/qframe.h>
-#include <QtGui/qpushbutton.h>
-#include <QtGui/qlayout.h>
+#include <QtWidgets/qframe.h>
+#include <QtWidgets/qpushbutton.h>
+#include <QtWidgets/qlayout.h>
 #include <QtCore/qvariant.h>
-#include <QtGui/qwhatsthis.h>
-#include <QtGui/qmessagebox.h>
+#include <QtWidgets/qwhatsthis.h>
+#include <QtWidgets/qmessagebox.h>
 #include <QtCore/qtimer.h>
 #include <QtGui/QMouseEvent>
-#include <QtGui/QMenu>
+#include <QtWidgets/QMenu>
 
 #include "interfaces/imodelcontrolreceiver.h"
 #include "interfaces/ierrorreceiver.h"

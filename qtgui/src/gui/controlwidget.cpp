@@ -22,8 +22,8 @@
 
 #include "controlwidget.h"
 
-#include <QtGui/qlabel.h>
-#include <QtGui/qlayout.h>
+#include <QtWidgets/qlabel.h>
+#include <QtWidgets/qlayout.h>
 #include <QtGui/QMouseEvent>
 #include "typeview.h"
 

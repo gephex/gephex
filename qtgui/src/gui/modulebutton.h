@@ -23,7 +23,7 @@
 #ifndef _INCLUDED_MODULE_BUTTON_H_
 #define _INCLUDED_MODULE_BUTTON_H_
 
-#include <QtGui/qtoolbutton.h>
+#include <QtWidgets/qtoolbutton.h>
 #include <string>
 
 class Controller;
@@ -38,7 +38,7 @@ protected:
 	virtual void mousePressEvent ( QMouseEvent * ); 
 
 public:
-	ModuleButton(int id, QWidget* parent, Qt::WFlags fl=0);
+	ModuleButton(int id, QWidget* parent, Qt::WindowFlags fl=0);
 	
 	void setController(Controller*);
 
