@@ -200,6 +200,7 @@ namespace gui
 	  catch (std::logic_error&)
 	    {
 	      std::cerr << "Buffer = <" << buf.getPtr() << ">" << std::endl;
+	      throw std::runtime_error("invalid module info");
 	    }
 	}
       catch (std::runtime_error& e)
