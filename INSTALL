@@ -1,5 +1,22 @@
 Please read README first!
 
+Building on a current Linux system (2026)
+-----------------------------------------
+
+The easiest way is to build inside a Debian 13 container, only docker
+is needed on the host:
+
+  build/docker/build.sh
+
+This installs GePhex to ./_install, start it with ./_install/bin/gephex.
+The binaries run natively on Debian 13. On the host you need the
+runtime libraries (Qt 5, SDL 1.2 (sdl12-compat), SDL_image, SDL_ttf, FFmpeg,
+ALSA, aalib), see build/docker/Dockerfile for the matching -dev packages.
+
+To build without docker install these -dev packages and run
+"sh bootstrap.sh" before the steps below (python3 is needed for the
+code generators).
+
 To install gephex from source on windows, see README.win32.
 
 To install gephex on mac os x, see README.macosx
